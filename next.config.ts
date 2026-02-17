@@ -1,12 +1,9 @@
 import type { NextConfig } from "next";
 
-// Force restart
+// Force restart timestamp: 2026-02-18T00:00:00
 
 const nextConfig = {
   /* config options here */
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     ignoreBuildErrors: true,
   },

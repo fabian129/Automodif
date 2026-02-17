@@ -31,16 +31,16 @@ const testimonials = [
 
 export function Testimonials() {
     return (
-        <section className="py-24 bg-background border-t border-white/5 relative overflow-hidden">
+        <section className="py-24 bg-background border-t border-zinc-200 dark:border-white/5 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <Reveal className="mx-auto text-center mb-16 max-w-3xl">
-                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-primary tracking-wider uppercase mb-6">
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 text-xs font-medium text-primary tracking-wider uppercase mb-6">
                         Omdömen
                     </span>
-                    <h3 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6">
+                    <h3 className="text-4xl md:text-5xl font-medium text-zinc-950 dark:text-white tracking-tighter mb-6">
                         Vad våra kunder säger
                     </h3>
-                    <p className="text-zinc-400 text-lg md:text-xl font-light leading-relaxed">
+                    <p className="text-zinc-500 dark:text-zinc-400 text-lg md:text-xl font-light leading-relaxed">
                         Vi är stolta över vårt rykte. Här är några ord från våra nöjda kunder i Västerås.
                     </p>
                 </Reveal>

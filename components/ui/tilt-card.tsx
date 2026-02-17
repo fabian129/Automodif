@@ -8,7 +8,7 @@ import {
     useSpring,
 } from "framer-motion";
 
-const ROTATION_RANGE = 20; // Degrees
+const ROTATION_RANGE = 2.5; // Degrees
 const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
 
 export const TiltCard = ({

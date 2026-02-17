@@ -93,7 +93,7 @@ export const InfiniteMovingCards = ({
             >
                 {items.map((item, idx) => (
                     <li
-                        className="w-[350px] max-w-full relative rounded-3xl border border-white/10 flex-shrink-0 bg-[#121214] px-8 py-8 md:w-[450px] shadow-lg"
+                        className="w-[350px] max-w-full relative rounded-3xl border border-zinc-200 dark:border-white/10 flex-shrink-0 bg-zinc-100 dark:bg-[#121214] px-8 py-8 md:w-[450px] shadow-lg dark:shadow-none"
                         key={item.name + idx}
                     >
                         <blockquote>
@@ -105,15 +105,15 @@ export const InfiniteMovingCards = ({
                             {/* Quote Icon Background */}
                             <Quote className="absolute top-6 right-6 w-10 h-10 text-primary/10 fill-primary/5 stroke-none" />
 
-                            <span className=" relative z-20 text-lg leading-[1.6] text-white font-light italic">
+                            <span className=" relative z-20 text-lg leading-[1.6] text-zinc-700 dark:text-white font-light italic">
                                 &quot;{item.quote}&quot;
                             </span>
                             <div className="relative z-20 mt-8 flex flex-row items-center gap-4">
-                                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white font-medium border border-white/10">
+                                <div className="w-10 h-10 rounded-full bg-white dark:bg-white/10 flex items-center justify-center text-zinc-900 dark:text-white font-medium border border-zinc-200 dark:border-white/10 shadow-sm dark:shadow-none">
                                     {item.name.charAt(0)}
                                 </div>
                                 <span className="flex flex-col">
-                                    <span className=" text-base leading-[1.6] text-white font-medium">
+                                    <span className=" text-base leading-[1.6] text-zinc-900 dark:text-white font-medium">
                                         {item.name}
                                     </span>
                                     <span className=" text-sm leading-[1.6] text-primary/80 font-normal">

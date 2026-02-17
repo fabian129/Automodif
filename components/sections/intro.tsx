@@ -9,23 +9,23 @@ export function Intro() {
 
             <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
                 <Reveal className="mx-auto mb-8">
-                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-primary tracking-wider uppercase mb-6">
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 text-xs font-medium text-primary tracking-wider uppercase mb-6">
                         <Wrench className="w-3 h-3" />
                         Din Partner i Västerås
                     </span>
-                    <h2 className="text-4xl md:text-6xl font-medium text-white tracking-tighter mb-8 leading-[1.1]">
+                    <h2 className="text-4xl md:text-6xl font-medium text-foreground dark:text-white tracking-tighter mb-8 leading-[1.1]">
                         Välkommen till <br className="hidden md:block" />
                         <span className="text-primary">Automodif</span>
                     </h2>
                 </Reveal>
 
                 <Reveal delay={0.1} className="mx-auto">
-                    <p className="text-xl md:text-3xl text-zinc-400 font-light leading-relaxed max-w-3xl mx-auto">
-                        Vi är en <span className="text-white font-normal">auktoriserad Autoexperten-verkstad</span> med
-                        <span className="text-white font-normal"> lång erfarenhet</span> av bilservice.
-                        Som en del av nätverket erbjuder vi dig <span className="text-white font-normal">trygghet</span> genom
-                        <span className="text-white font-normal"> certifierade tekniker</span> och
-                        <span className="text-white font-normal"> kvalitetsgarantier</span>.
+                    <p className="text-xl md:text-3xl text-muted-foreground dark:text-zinc-400 font-light leading-relaxed max-w-3xl mx-auto">
+                        Vi är en <span className="text-foreground dark:text-white font-normal">auktoriserad Autoexperten-verkstad</span> med
+                        <span className="text-foreground dark:text-white font-normal"> lång erfarenhet</span> av bilservice.
+                        Som en del av nätverket erbjuder vi dig <span className="text-foreground dark:text-white font-normal">trygghet</span> genom
+                        <span className="text-foreground dark:text-white font-normal"> certifierade tekniker</span> och
+                        <span className="text-foreground dark:text-white font-normal"> kvalitetsgarantier</span>.
                     </p>
                 </Reveal>
 

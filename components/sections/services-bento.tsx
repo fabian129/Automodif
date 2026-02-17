@@ -76,11 +76,11 @@ export function ServicesBento() {
                                 <Wrench className="w-3 h-3" />
                                 Vad vi erbjuder
                             </span>
-                            <h3 className="text-5xl md:text-7xl font-medium text-white tracking-tighter mb-6">
+                            <h3 className="text-5xl md:text-7xl font-medium text-zinc-950 dark:text-white tracking-tighter mb-6">
                                 Våra Tjänster
                             </h3>
-                            <p className="text-zinc-400 text-lg md:text-xl font-light max-w-2xl leading-relaxed">
-                                Komplett bilvård under ett tak. Från <span className="text-white font-normal">enkel service</span> till <span className="text-white font-normal">avancerad diagnostik</span>.
+                            <p className="text-zinc-500 dark:text-zinc-400 text-lg md:text-xl font-light max-w-2xl leading-relaxed">
+                                Komplett bilvård under ett tak. Från <span className="text-zinc-900 dark:text-white font-normal">enkel service</span> till <span className="text-zinc-900 dark:text-white font-normal">avancerad diagnostik</span>.
                             </p>
                         </div>
                     </div>
@@ -93,10 +93,11 @@ export function ServicesBento() {
                         width="100%"
                         delay={0.1}
                         fullHeight
+                        overflowVisible
                     >
                         <TiltCard
                             onClick={() => setSelectedService(services.service)}
-                            className="relative h-full bg-card border border-white/5 rounded-3xl overflow-hidden group p-8 md:p-12 flex flex-col justify-between hover:border-white/10 transition-all hover-glow cursor-pointer"
+                            className="relative h-full bg-[#121214] border border-white/5 rounded-3xl overflow-hidden group p-8 md:p-12 flex flex-col justify-between hover:border-white/10 transition-all hover-glow cursor-pointer"
                         >
                             {/* Background Image */}
                             <div className="absolute inset-0 z-0">
@@ -140,10 +141,11 @@ export function ServicesBento() {
                         width="100%"
                         delay={0.2}
                         fullHeight
+                        overflowVisible
                     >
                         <TiltCard
                             onClick={() => setSelectedService(services.repairs)}
-                            className="relative h-full bg-card border border-white/5 rounded-3xl overflow-hidden group p-8 md:p-10 flex flex-col hover:border-white/10 transition-all hover-glow cursor-pointer"
+                            className="relative h-full bg-[#121214] border border-white/5 rounded-3xl overflow-hidden group p-8 md:p-10 flex flex-col hover:border-white/10 transition-all hover-glow cursor-pointer"
                         >
                             {/* Background Image */}
                             <div className="absolute inset-0 z-0">
@@ -182,10 +184,10 @@ export function ServicesBento() {
                     </Reveal>
 
                     {/* Tires */}
-                    <Reveal className="md:col-span-2 h-full" width="100%" delay={0.3} fullHeight>
+                    <Reveal className="md:col-span-2 h-full" width="100%" delay={0.3} fullHeight overflowVisible>
                         <TiltCard
                             onClick={() => setSelectedService(services.tires)}
-                            className="relative h-full bg-card border border-white/5 rounded-3xl overflow-hidden group p-8 flex flex-col justify-center hover:border-white/10 transition-all hover-glow cursor-pointer"
+                            className="relative h-full bg-[#121214] border border-white/5 rounded-3xl overflow-hidden group p-8 flex flex-col justify-center hover:border-white/10 transition-all hover-glow cursor-pointer"
                         >
                             {/* Background Image */}
                             <div className="absolute inset-0 z-0">
@@ -213,10 +215,10 @@ export function ServicesBento() {
                     </Reveal>
 
                     {/* Diagnostics */}
-                    <Reveal className="md:col-span-2 h-full" width="100%" delay={0.4} fullHeight>
+                    <Reveal className="md:col-span-2 h-full" width="100%" delay={0.4} fullHeight overflowVisible>
                         <TiltCard
                             onClick={() => setSelectedService(services.diagnostics)}
-                            className="relative h-full bg-card border border-white/5 rounded-3xl overflow-hidden group p-8 flex flex-col justify-center hover:border-white/10 transition-all hover-glow cursor-pointer"
+                            className="relative h-full bg-[#121214] border border-white/5 rounded-3xl overflow-hidden group p-8 flex flex-col justify-center hover:border-white/10 transition-all hover-glow cursor-pointer"
                         >
                             {/* Background Image */}
                             <div className="absolute inset-0 z-0">
@@ -242,10 +244,10 @@ export function ServicesBento() {
                     </Reveal>
 
                     {/* AC Service */}
-                    <Reveal className="md:col-span-2 h-full" width="100%" delay={0.5} fullHeight>
+                    <Reveal className="md:col-span-2 h-full" width="100%" delay={0.5} fullHeight overflowVisible>
                         <TiltCard
                             onClick={() => setSelectedService(services.ac)}
-                            className="relative h-full bg-card border border-white/5 rounded-3xl overflow-hidden group p-8 flex flex-col justify-center hover:border-white/10 transition-all hover-glow cursor-pointer"
+                            className="relative h-full bg-[#121214] border border-white/5 rounded-3xl overflow-hidden group p-8 flex flex-col justify-center hover:border-white/10 transition-all hover-glow cursor-pointer"
                         >
                             {/* Background Image */}
                             <div className="absolute inset-0 z-0">

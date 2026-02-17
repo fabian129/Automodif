@@ -10,7 +10,7 @@ import { Reveal } from "@/components/ui/reveal";
 
 export function Contact() {
     return (
-        <section id="contact" className="py-32 border-t border-white/5 bg-[#050505] relative overflow-hidden">
+        <section id="contact" className="py-32 border-t border-zinc-200 dark:border-white/5 bg-white dark:bg-[#050505] relative overflow-hidden">
             {/* Background Gradient */}
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -19,27 +19,27 @@ export function Contact() {
                     {/* Contact Info */}
                     <Reveal width="100%">
                         <div>
-                            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-primary tracking-wider uppercase mb-6">
+                            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 text-xs font-medium text-primary tracking-wider uppercase mb-6">
                                 <MapPin className="w-3 h-3" />
                                 Kontakt
                             </span>
-                            <h3 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6">
+                            <h3 className="text-4xl md:text-5xl font-medium text-zinc-950 dark:text-white tracking-tighter mb-6">
                                 Hitta till oss
                             </h3>
-                            <p className="text-zinc-400 text-lg font-light mb-12 max-w-md leading-relaxed">
+                            <p className="text-zinc-500 dark:text-zinc-400 text-lg font-light mb-12 max-w-md leading-relaxed">
                                 Vi finns på Hälla i Västerås. Välkommen in för en kopp kaffe medan vi tar hand om din bil.
                             </p>
 
                             <div className="space-y-10">
                                 <div className="flex items-start gap-6 group">
-                                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-white group-hover:text-primary group-hover:border-primary/30 transition-all duration-300">
+                                    <div className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 flex items-center justify-center shrink-0 text-zinc-900 dark:text-white group-hover:text-primary group-hover:border-primary/30 transition-all duration-300 shadow-sm dark:shadow-none">
                                         <MapPin className="w-6 h-6" strokeWidth={1.5} />
                                     </div>
                                     <div>
-                                        <h4 className="text-base font-medium text-white mb-2">
+                                        <h4 className="text-base font-medium text-zinc-900 dark:text-white mb-2">
                                             Besöksadress
                                         </h4>
-                                        <p className="text-zinc-400 font-light leading-relaxed">
+                                        <p className="text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
                                             Automodif<br />
                                             Brynäsvägen 13<br />
                                             724 74 Västerås
@@ -48,17 +48,17 @@ export function Contact() {
                                 </div>
 
                                 <div className="flex items-start gap-6 group">
-                                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-white group-hover:text-primary group-hover:border-primary/30 transition-all duration-300">
+                                    <div className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 flex items-center justify-center shrink-0 text-zinc-900 dark:text-white group-hover:text-primary group-hover:border-primary/30 transition-all duration-300 shadow-sm dark:shadow-none">
                                         <Phone className="w-6 h-6" strokeWidth={1.5} />
                                     </div>
                                     <div>
-                                        <h4 className="text-base font-medium text-white mb-2">Ring Oss</h4>
-                                        <p className="text-zinc-400 font-light mb-1">
+                                        <h4 className="text-base font-medium text-zinc-900 dark:text-white mb-2">Ring Oss</h4>
+                                        <p className="text-zinc-500 dark:text-zinc-400 font-light mb-1">
                                             Växel öppen 07:00–17:00
                                         </p>
                                         <a
                                             href="tel:021123939"
-                                            className="text-white font-medium hover:text-primary transition-colors text-lg"
+                                            className="text-zinc-900 dark:text-white font-medium hover:text-primary transition-colors text-lg"
                                         >
                                             021-12 39 39
                                         </a>
@@ -66,14 +66,14 @@ export function Contact() {
                                 </div>
 
                                 <div className="flex items-start gap-6 group">
-                                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-white group-hover:text-primary group-hover:border-primary/30 transition-all duration-300">
+                                    <div className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 flex items-center justify-center shrink-0 text-zinc-900 dark:text-white group-hover:text-primary group-hover:border-primary/30 transition-all duration-300 shadow-sm dark:shadow-none">
                                         <Clock className="w-6 h-6" strokeWidth={1.5} />
                                     </div>
                                     <div>
-                                        <h4 className="text-base font-medium text-white mb-2">
+                                        <h4 className="text-base font-medium text-zinc-900 dark:text-white mb-2">
                                             Öppettider
                                         </h4>
-                                        <p className="text-zinc-400 font-light leading-relaxed">
+                                        <p className="text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
                                             Måndag–Fredag: 07:00–17:00<br />
                                             Lördag: Enligt överenskommelse<br />
                                             Söndag: Stängt
@@ -83,7 +83,7 @@ export function Contact() {
                             </div>
 
                             {/* Map Box */}
-                            <div className="mt-12 w-full h-64 bg-zinc-900 rounded-3xl border border-white/10 flex items-center justify-center group overflow-hidden relative">
+                            <div className="mt-12 w-full h-64 bg-zinc-100 dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-white/10 flex items-center justify-center group overflow-hidden relative shadow-md dark:shadow-none">
                                 <Image
                                     src="/images/gallery/real-2.jpg"
                                     alt="Map Background"
@@ -106,48 +106,48 @@ export function Contact() {
 
                     {/* Booking Form */}
                     <Reveal width="100%" delay={0.2}>
-                        <div className="bg-[#0A0A0C] border border-white/5 p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
+                        <div className="bg-zinc-50 dark:bg-[#0A0A0C] border border-zinc-200 dark:border-white/5 p-8 md:p-12 rounded-3xl shadow-xl dark:shadow-2xl relative overflow-hidden">
                             {/* Glow Effect */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px] pointer-events-none" />
 
-                            <h3 className="text-3xl font-medium text-white mb-2 tracking-tight">
+                            <h3 className="text-3xl font-medium text-zinc-950 dark:text-white mb-2 tracking-tight">
                                 Boka Service
                             </h3>
-                            <p className="text-zinc-400 text-sm mb-8">
+                            <p className="text-zinc-500 dark:text-zinc-400 text-sm mb-8">
                                 Fyll i formuläret så återkommer vi inom 24 timmar.
                             </p>
 
                             <form className="space-y-6 relative z-10">
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="group space-y-2">
-                                        <label className="text-xs uppercase tracking-widest text-zinc-500 font-medium group-focus-within:text-white transition-colors">
+                                        <label className="text-xs uppercase tracking-widest text-zinc-500 font-medium group-focus-within:text-zinc-900 dark:group-focus-within:text-white transition-colors">
                                             Namn
                                         </label>
                                         <input
                                             type="text"
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-primary/50 focus:bg-white/10 transition-all text-sm placeholder:text-zinc-600"
+                                            className="w-full bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-xl px-4 py-3 text-zinc-900 dark:text-white outline-none focus:border-primary/50 focus:bg-white dark:focus:bg-white/10 transition-all text-sm placeholder:text-zinc-400 dark:placeholder:text-zinc-600 shadow-sm dark:shadow-none"
                                             placeholder="Anders Andersson"
                                         />
                                     </div>
                                     <div className="group space-y-2">
-                                        <label className="text-xs uppercase tracking-widest text-zinc-500 font-medium group-focus-within:text-white transition-colors">
+                                        <label className="text-xs uppercase tracking-widest text-zinc-500 font-medium group-focus-within:text-zinc-900 dark:group-focus-within:text-white transition-colors">
                                             Tel
                                         </label>
                                         <input
                                             type="tel"
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-primary/50 focus:bg-white/10 transition-all text-sm placeholder:text-zinc-600"
+                                            className="w-full bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-xl px-4 py-3 text-zinc-900 dark:text-white outline-none focus:border-primary/50 focus:bg-white dark:focus:bg-white/10 transition-all text-sm placeholder:text-zinc-400 dark:placeholder:text-zinc-600 shadow-sm dark:shadow-none"
                                             placeholder="070-123 45 67"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="group space-y-2">
-                                    <label className="text-xs uppercase tracking-widest text-zinc-500 font-medium group-focus-within:text-white transition-colors">
+                                    <label className="text-xs uppercase tracking-widest text-zinc-500 font-medium group-focus-within:text-zinc-900 dark:group-focus-within:text-white transition-colors">
                                         Bil (Reg.nr)
                                     </label>
                                     <input
                                         type="text"
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-primary/50 focus:bg-white/10 transition-all text-sm placeholder:text-zinc-600"
+                                        className="w-full bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-xl px-4 py-3 text-zinc-900 dark:text-white outline-none focus:border-primary/50 focus:bg-white dark:focus:bg-white/10 transition-all text-sm placeholder:text-zinc-400 dark:placeholder:text-zinc-600 shadow-sm dark:shadow-none"
                                         placeholder="ABC 123"
                                     />
                                 </div>
@@ -164,7 +164,7 @@ export function Contact() {
                                                     className="cursor-pointer relative"
                                                 >
                                                     <input type="checkbox" className="peer hidden" />
-                                                    <div className="px-4 py-2 bg-white/5 border border-white/10 text-xs text-zinc-400 rounded-lg hover:bg-white/10 transition-all select-none peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary">
+                                                    <div className="px-4 py-2 bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-xs text-zinc-600 dark:text-zinc-400 rounded-lg hover:bg-zinc-100 dark:hover:bg-white/10 transition-all select-none peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary shadow-sm dark:shadow-none">
                                                         {option}
                                                     </div>
                                                 </label>
@@ -174,11 +174,11 @@ export function Contact() {
                                 </div>
 
                                 <div className="group space-y-2">
-                                    <label className="text-xs uppercase tracking-widest text-zinc-500 font-medium group-focus-within:text-white transition-colors">
+                                    <label className="text-xs uppercase tracking-widest text-zinc-500 font-medium group-focus-within:text-zinc-900 dark:group-focus-within:text-white transition-colors">
                                         Meddelande
                                     </label>
                                     <textarea
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-primary/50 focus:bg-white/10 transition-all text-sm placeholder:text-zinc-600 resize-none"
+                                        className="w-full bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-xl px-4 py-3 text-zinc-900 dark:text-white outline-none focus:border-primary/50 focus:bg-white dark:focus:bg-white/10 transition-all text-sm placeholder:text-zinc-400 dark:placeholder:text-zinc-600 resize-none shadow-sm dark:shadow-none"
                                         rows={4}
                                         placeholder="Beskriv problemet kort..."
                                     ></textarea>
@@ -186,7 +186,7 @@ export function Contact() {
 
                                 <button
                                     type="button"
-                                    className="w-full bg-white text-black py-4 rounded-xl text-sm font-bold hover:bg-zinc-200 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group shadow-lg shadow-white/5"
+                                    className="w-full bg-zinc-900 dark:bg-white text-white dark:text-black py-4 rounded-xl text-sm font-bold hover:bg-zinc-800 dark:hover:bg-zinc-200 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group shadow-lg shadow-zinc-200 dark:shadow-white/5"
                                 >
                                     Skicka Förfrågan
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

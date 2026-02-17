@@ -42,14 +42,14 @@ export function Process() {
         <section id="process" className="py-48 bg-background relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 relative">
                 <Reveal className="text-center mb-64" width="100%">
-                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-primary tracking-wider uppercase mb-6">
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 text-xs font-medium text-primary tracking-wider uppercase mb-6">
                         Enkelt & Smidigt
                     </span>
-                    <h3 className="text-5xl md:text-7xl font-medium text-white tracking-tighter mb-8 leading-[1.1]">
+                    <h3 className="text-5xl md:text-7xl font-medium text-zinc-950 dark:text-white tracking-tighter mb-8 leading-[1.1]">
                         Så här <span className="text-primary">funkar det</span>
                     </h3>
-                    <p className="text-xl md:text-2xl text-white font-light max-w-2xl mx-auto leading-relaxed">
-                        Från bokning till upphämtning. Vi har <span className="text-white font-normal">minimerat krånglet</span> så att du kan tänka på annat.
+                    <p className="text-xl md:text-2xl text-zinc-500 dark:text-white font-light max-w-2xl mx-auto leading-relaxed">
+                        Från bokning till upphämtning. Vi har <span className="text-zinc-900 dark:text-white font-normal">minimerat krånglet</span> så att du kan tänka på annat.
                     </p>
                 </Reveal>
 
@@ -58,7 +58,7 @@ export function Process() {
                 <div ref={containerRef} className="relative max-w-6xl mx-auto pb-56">
 
                     {/* Continuous Vertical Line Background (Faint) */}
-                    <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-white/5 -translate-x-1/2" />
+                    <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-zinc-200 dark:bg-white/5 -translate-x-1/2" />
 
                     {/* Animated Beam */}
                     <motion.div
@@ -88,7 +88,7 @@ export function Process() {
                                                     <h4 className="text-3xl md:text-4xl font-medium text-primary mb-4 tracking-tight transition-colors duration-500">
                                                         {step.title}
                                                     </h4>
-                                                    <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed group-hover:text-white transition-colors">
+                                                    <p className="text-lg md:text-xl text-zinc-600 dark:text-white/80 font-light leading-relaxed group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
                                                         {step.description}
                                                     </p>
                                                 </div>
@@ -97,11 +97,11 @@ export function Process() {
 
                                         {/* Icon Column (Center Desktop, Left Mobile) */}
                                         <div className="relative flex justify-center z-10">
-                                            <div className="relative w-14 h-14 md:w-24 md:h-24 rounded-3xl bg-[#121214] border border-white/10 flex items-center justify-center shadow-[0_0_20px_-5px_rgba(0,0,0,0.5)] hover:border-primary/50 hover:shadow-[0_0_40px_-5px_rgba(0,82,204,0.5)] transition-all duration-500 group">
+                                            <div className="relative w-14 h-14 md:w-24 md:h-24 rounded-3xl bg-white dark:bg-[#121214] border border-zinc-200 dark:border-white/10 flex items-center justify-center shadow-lg dark:shadow-[0_0_20px_-5px_rgba(0,0,0,0.5)] hover:border-primary/50 hover:shadow-[0_0_40px_-5px_rgba(0,82,204,0.5)] transition-all duration-500 group">
                                                 <step.icon className="w-6 h-6 md:w-10 md:h-10 text-zinc-500 group-hover:text-primary transition-colors duration-500" strokeWidth={1.5} />
 
                                                 {/* Badge */}
-                                                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-card border border-white/10 flex items-center justify-center text-xs font-bold text-zinc-500 group-hover:text-white group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-md z-20">
+                                                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white dark:bg-card border border-zinc-200 dark:border-white/10 flex items-center justify-center text-xs font-bold text-zinc-500 group-hover:text-white group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-md z-20">
                                                     {step.id}
                                                 </div>
                                             </div>
@@ -124,7 +124,7 @@ export function Process() {
                                                 <h4 className="text-2xl md:text-4xl font-medium text-primary mb-4 tracking-tight transition-colors duration-500">
                                                     {step.title}
                                                 </h4>
-                                                <p className="text-base md:text-xl text-white/80 font-light leading-relaxed group-hover:text-white transition-colors">
+                                                <p className="text-base md:text-xl text-zinc-600 dark:text-white/80 font-light leading-relaxed group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
                                                     {step.description}
                                                 </p>
                                             </div>
@@ -150,26 +150,26 @@ export function Process() {
                             ease: "easeInOut",
                             delay: 0.5
                         }}
-                        className="relative max-w-5xl mx-auto rounded-3xl overflow-hidden border bg-gradient-to-br from-white/5 to-transparent p-12 text-center group"
+                        className="relative max-w-5xl mx-auto rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#121214] p-12 text-center group shadow-xl dark:shadow-none"
                     >
                         {/* Glow Effect */}
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1/2 bg-primary/20 blur-[100px] pointer-events-none group-hover:bg-primary/30 transition-colors duration-700" />
 
                         <div className="relative z-10 flex flex-col items-center">
-                            <h4 className="text-3xl md:text-5xl font-medium text-white mb-6 tracking-tight">
+                            <h4 className="text-3xl md:text-5xl font-medium text-zinc-950 dark:text-white mb-6 tracking-tight">
                                 Redo att boka tid?
                             </h4>
-                            <p className="text-lg text-zinc-400 font-light max-w-xl mx-auto mb-10 leading-relaxed">
+                            <p className="text-lg text-zinc-600 dark:text-zinc-400 font-light max-w-xl mx-auto mb-10 leading-relaxed">
                                 Vi ser till att din bil rullar säkert på vägarna igen. Boka din tid online eller ring oss direkt.
                             </p>
 
                             <div className="flex flex-col md:flex-row gap-4">
-                                <a href="#contact" className="px-8 py-4 bg-white text-black text-sm font-bold rounded-xl hover:bg-zinc-200 transition-all hover:scale-105 inline-flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                                <a href="#contact" className="px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-bold rounded-xl hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all hover:scale-105 inline-flex items-center gap-2 shadow-lg dark:shadow-[0_0_20px_rgba(255,255,255,0.1)]">
                                     Boka Service Nu
                                     <Calendar className="w-4 h-4" />
                                 </a>
 
-                                <a href="tel:021123939" className="px-8 py-4 border border-white/10 bg-white/5 text-white text-sm font-medium rounded-xl hover:bg-white/10 transition-all hover:scale-105 inline-flex items-center gap-2 backdrop-blur-sm">
+                                <a href="tel:021123939" className="px-8 py-4 border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-white/5 text-zinc-900 dark:text-white text-sm font-medium rounded-xl hover:bg-zinc-100 dark:hover:bg-white/10 transition-all hover:scale-105 inline-flex items-center gap-2 backdrop-blur-sm">
                                     Ring 021-12 39 39
                                 </a>
                             </div>

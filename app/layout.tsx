@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { ThemeProvider } from "@/components/theme-provider";
 import { MouseTracker } from "@/components/ui/mouse-tracker";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
 
@@ -71,21 +72,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sv" className="scroll-smooth">
+    <html lang="sv" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
       </head>
       <body
-        className="antialiased bg-black text-white selection:bg-primary selection:text-white font-sans"
+        className="antialiased bg-background text-foreground selection:bg-primary selection:text-white font-sans"
       >
-        <MouseTracker />
-        <SmoothScroll>
-          <Navbar />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </SmoothScroll>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <MouseTracker />
+          <SmoothScroll>
+            <Navbar />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+          </SmoothScroll>
+        </ThemeProvider>
 
         <script
           type="application/ld+json"

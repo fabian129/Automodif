@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export function WhyChooseUs() {
     return (
-        <section className="py-32 bg-background relative overflow-hidden">
+        <section className="py-32 bg-[#121214] relative overflow-hidden">
             {/* Background Gradient & Texture */}
-            <div className="absolute inset-0 bg-background/90 z-0" />
+            <div className="absolute inset-0 bg-black/90 z-0" />
             <div className="absolute inset-0 z-0 opacity-20">
                 <Image
                     src="/images/gallery/bento-light.jpg"
@@ -34,20 +34,20 @@ export function WhyChooseUs() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Card 1 */}
-                    <Reveal width="100%" delay={0.1}>
-                        <div className="group relative p-8 md:p-10 border border-white/5 bg-card/80 backdrop-blur-md rounded-3xl hover:border-white/10 transition-all duration-500 hover:-translate-y-1">
+                    <Reveal width="100%" delay={0.1} overflowVisible>
+                        <div className="group relative p-8 md:p-10 border border-zinc-200 dark:border-white/5 bg-white/95 dark:bg-card/80 backdrop-blur-md rounded-3xl hover:border-primary/20 dark:hover:border-white/10 transition-all duration-500 hover:-translate-y-1 shadow-xl shadow-black/5 dark:shadow-none">
                             {/* Hover Gradient */}
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none" />
 
-                            <div className="w-14 h-14 rounded-2xl border border-white/10 flex items-center justify-center bg-[#18181B] mb-8 text-primary shadow-[0_0_20px_-5px_rgba(0,82,204,0.3)] relative z-10 group-hover:scale-110 transition-transform duration-500">
+                            <div className="w-14 h-14 rounded-2xl border border-zinc-200 dark:border-white/10 flex items-center justify-center bg-zinc-100 dark:bg-[#18181B] mb-8 text-primary shadow-[0_0_20px_-5px_rgba(0,82,204,0.3)] relative z-10 group-hover:scale-110 transition-transform duration-500">
                                 <ShieldCheck className="w-7 h-7" strokeWidth={1.5} />
                             </div>
 
-                            <h4 className="text-2xl font-medium text-white mb-4 relative z-10">
+                            <h4 className="text-2xl font-medium text-zinc-950 dark:text-white mb-4 relative z-10">
                                 Autoexperten Garanti
                             </h4>
-                            <p className="text-base text-zinc-400 font-light leading-relaxed mb-6 relative z-10">
-                                Trygghet på vägen. Vi erbjuder 12 månaders <span className="text-zinc-200">fri vägassistans</span> och 3 års funktionsgaranti på reservdelar.
+                            <p className="text-base text-zinc-600 dark:text-zinc-400 font-light leading-relaxed mb-6 relative z-10">
+                                Trygghet på vägen. Vi erbjuder 12 månaders <span className="text-zinc-900 dark:text-zinc-200 font-normal">fri vägassistans</span> och 3 års funktionsgaranti på reservdelar.
                             </p>
 
                             <ul className="space-y-2 relative z-10">
@@ -62,20 +62,20 @@ export function WhyChooseUs() {
                     </Reveal>
 
                     {/* Card 2 */}
-                    <Reveal width="100%" delay={0.2}>
-                        <div className="group relative p-8 md:p-10 border border-white/5 bg-card/80 backdrop-blur-md rounded-3xl hover:border-white/10 transition-all duration-500 hover:-translate-y-1">
+                    <Reveal width="100%" delay={0.2} overflowVisible>
+                        <div className="group relative p-8 md:p-10 border border-zinc-200 dark:border-white/5 bg-white/95 dark:bg-card/80 backdrop-blur-md rounded-3xl hover:border-primary/20 dark:hover:border-white/10 transition-all duration-500 hover:-translate-y-1 shadow-xl shadow-black/5 dark:shadow-none">
                             {/* Hover Gradient */}
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none" />
 
-                            <div className="w-14 h-14 rounded-2xl border border-white/10 flex items-center justify-center bg-[#18181B] mb-8 text-primary shadow-[0_0_20px_-5px_rgba(0,82,204,0.3)] relative z-10 group-hover:scale-110 transition-transform duration-500">
+                            <div className="w-14 h-14 rounded-2xl border border-zinc-200 dark:border-white/10 flex items-center justify-center bg-zinc-100 dark:bg-[#18181B] mb-8 text-primary shadow-[0_0_20px_-5px_rgba(0,82,204,0.3)] relative z-10 group-hover:scale-110 transition-transform duration-500">
                                 <UserCheck className="w-7 h-7" strokeWidth={1.5} />
                             </div>
 
-                            <h4 className="text-2xl font-medium text-white mb-4 relative z-10">
+                            <h4 className="text-2xl font-medium text-zinc-950 dark:text-white mb-4 relative z-10">
                                 Certifierade Tekniker
                             </h4>
-                            <p className="text-base text-zinc-400 font-light leading-relaxed mb-6 relative z-10">
-                                Kompetens du kan lita på. Våra mekaniker utbildas löpande för att hantera <span className="text-zinc-200">modern fordonsteknik</span>.
+                            <p className="text-base text-zinc-600 dark:text-zinc-400 font-light leading-relaxed mb-6 relative z-10">
+                                Kompetens du kan lita på. Våra mekaniker utbildas löpande för att hantera <span className="text-zinc-900 dark:text-zinc-200 font-normal">modern fordonsteknik</span>.
                             </p>
 
                             <ul className="space-y-2 relative z-10">
@@ -90,20 +90,20 @@ export function WhyChooseUs() {
                     </Reveal>
 
                     {/* Card 3 */}
-                    <Reveal width="100%" delay={0.3}>
-                        <div className="group relative p-8 md:p-10 border border-white/5 bg-card/80 backdrop-blur-md rounded-3xl hover:border-white/10 transition-all duration-500 hover:-translate-y-1">
+                    <Reveal width="100%" delay={0.3} overflowVisible>
+                        <div className="group relative p-8 md:p-10 border border-zinc-200 dark:border-white/5 bg-white/95 dark:bg-card/80 backdrop-blur-md rounded-3xl hover:border-primary/20 dark:hover:border-white/10 transition-all duration-500 hover:-translate-y-1 shadow-xl shadow-black/5 dark:shadow-none">
                             {/* Hover Gradient */}
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none" />
 
-                            <div className="w-14 h-14 rounded-2xl border border-white/10 flex items-center justify-center bg-[#18181B] mb-8 text-primary shadow-[0_0_20px_-5px_rgba(0,82,204,0.3)] relative z-10 group-hover:scale-110 transition-transform duration-500">
+                            <div className="w-14 h-14 rounded-2xl border border-zinc-200 dark:border-white/10 flex items-center justify-center bg-zinc-100 dark:bg-[#18181B] mb-8 text-primary shadow-[0_0_20px_-5px_rgba(0,82,204,0.3)] relative z-10 group-hover:scale-110 transition-transform duration-500">
                                 <Wallet className="w-7 h-7" strokeWidth={1.5} />
                             </div>
 
-                            <h4 className="text-2xl font-medium text-white mb-4 relative z-10">
+                            <h4 className="text-2xl font-medium text-zinc-950 dark:text-white mb-4 relative z-10">
                                 Transparent Prissättning
                             </h4>
-                            <p className="text-base text-zinc-400 font-light leading-relaxed mb-6 relative z-10">
-                                Inga överraskningar. Du får alltid en <span className="text-zinc-200">tydlig offert</span> och godkänner priset innan vi påbörjar arbetet.
+                            <p className="text-base text-zinc-600 dark:text-zinc-400 font-light leading-relaxed mb-6 relative z-10">
+                                Inga överraskningar. Du får alltid en <span className="text-zinc-900 dark:text-zinc-200 font-normal">tydlig offert</span> och godkänner priset innan vi påbörjar arbetet.
                             </p>
 
                             <ul className="space-y-2 relative z-10">

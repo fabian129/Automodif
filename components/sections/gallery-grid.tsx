@@ -42,7 +42,7 @@ export function GalleryGrid() {
                             <div
                                 key={i}
                                 className={cn(
-                                    "relative overflow-hidden group border-[0.5px] border-black/10",
+                                    "relative overflow-hidden group border-[0.5px] border-border",
                                     img.className
                                 )}
                             >

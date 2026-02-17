@@ -33,16 +33,16 @@ const team = [
 
 export function Team() {
     return (
-        <section id="team" className="py-32 bg-[#09090B]">
+        <section id="team" className="py-32 bg-white dark:bg-[#09090B]">
             <div className="max-w-7xl mx-auto px-6">
                 <Reveal className="mb-24 text-center max-w-3xl mx-auto">
-                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-primary tracking-wider uppercase mb-6">
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 text-xs font-medium text-primary tracking-wider uppercase mb-6">
                         Vårt Team
                     </span>
-                    <h3 className="text-4xl md:text-5xl font-medium text-white tracking-tighter mb-6">
+                    <h3 className="text-4xl md:text-5xl font-medium text-zinc-950 dark:text-white tracking-tighter mb-6">
                         Expertis på plats
                     </h3>
-                    <p className="text-zinc-400 text-lg md:text-xl font-light leading-relaxed">
+                    <p className="text-zinc-500 dark:text-zinc-400 text-lg md:text-xl font-light leading-relaxed">
                         Ett dedikerat team av certifierade tekniker och rådgivare som brinner för din bil.
                     </p>
                 </Reveal>
@@ -52,7 +52,7 @@ export function Team() {
                         <Reveal key={i} width="100%" delay={i * 0.1}>
                             <div className="group relative">
                                 {/* Image Container */}
-                                <div className="relative aspect-[3/4] overflow-hidden rounded-3xl mb-6 bg-zinc-900 border border-white/5 shadow-lg group-hover:border-primary/30 group-hover:shadow-[0_0_30px_-5px_rgba(0,82,204,0.3)] transition-all duration-700">
+                                <div className="relative aspect-[3/4] overflow-hidden rounded-3xl mb-6 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 shadow-lg group-hover:border-primary/30 group-hover:shadow-[0_0_30px_-5px_rgba(0,82,204,0.3)] transition-all duration-700">
 
                                     {/* Gradient Overlay for Text Readability */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500 z-10" />
@@ -79,13 +79,13 @@ export function Team() {
 
                                 {/* Text Content */}
                                 <div className="text-center">
-                                    <h4 className="text-2xl font-medium text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300">
+                                    <h4 className="text-2xl font-medium text-zinc-900 dark:text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300">
                                         {member.name}
                                     </h4>
                                     <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">
                                         {member.role}
                                     </p>
-                                    <p className="text-zinc-400 font-light leading-relaxed text-sm">
+                                    <p className="text-zinc-500 dark:text-zinc-400 font-light leading-relaxed text-sm">
                                         {member.bio}
                                     </p>
                                 </div>
