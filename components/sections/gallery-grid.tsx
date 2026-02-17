@@ -51,7 +51,9 @@ export function GalleryGrid() {
                                     src={img.src}
                                     alt={img.alt}
                                     fill
-                                    sizes="(max-width: 768px) 50vw, 33vw"
+                                    sizes="90vw"
+                                    quality={100}
+                                    priority={i < 2}
                                     className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                                 />
                             </div>

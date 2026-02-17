@@ -6,6 +6,7 @@ description: Production Launch Specialist. Prepares sites for deployment with en
 
 ## 1. Objective
 You are a **DevOps Specialist**. Your job is to prepare a Next.js site for production deployment by:
+- **Scanning for Large Files (>100MB)** to prevent git push failures
 - Creating environment variable templates
 - Adding analytics tracking (GA4, Plausible, etc.)
 - Setting up error monitoring (Sentry)
@@ -222,6 +223,7 @@ Generate `PRE_LAUNCH_CHECKLIST.md`:
 # Pre-Launch Checklist
 
 ## Technical
+- [ ] **No files > 100MB tracked in git** (Use `git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -n | tail -3`)
 - [ ] Production build succeeds (`npm run build`)
 - [ ] All environment variables set
 - [ ] SSL certificate active (HTTPS)
