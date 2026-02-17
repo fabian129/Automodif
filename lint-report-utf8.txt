@@ -1,0 +1,78 @@
+﻿
+C:\Users\Fabian\Desktop\Antigravity\Auto-modif\app\layout.tsx
+   9:7  warning  'geistSans' is assigned a value but never used                                                                                                                   @typescript-eslint/no-unused-vars
+  14:7  warning  'geistMono' is assigned a value but never used                                                                                                                   @typescript-eslint/no-unused-vars
+  86:9  warning  Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  @next/next/no-page-custom-font
+
+C:\Users\Fabian\Desktop\Antigravity\Auto-modif\components\layout\navbar.tsx
+  5:22  warning  'Menu' is defined but never used   @typescript-eslint/no-unused-vars
+  5:28  warning  'Phone' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Fabian\Desktop\Antigravity\Auto-modif\components\sections\brand-marquee.tsx
+   3:10  warning  'Car' is defined but never used                                                                                                                                                                                                                                                          @typescript-eslint/no-unused-vars
+  40:33  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  59:33  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\Fabian\Desktop\Antigravity\Auto-modif\components\sections\hero.tsx
+  1:8   warning  'Image' is defined but never used         @typescript-eslint/no-unused-vars
+  3:27  warning  'MousePointer' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Fabian\Desktop\Antigravity\Auto-modif\components\sections\intro.tsx
+   2:18  warning  'ShieldCheck' is defined but never used                          @typescript-eslint/no-unused-vars
+   2:31  warning  'Heart' is defined but never used                                @typescript-eslint/no-unused-vars
+  34:25  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  34:74  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Fabian\Desktop\Antigravity\Auto-modif\components\sections\services-bento.tsx
+  14:10  warning  'cn' is defined but never used            @typescript-eslint/no-unused-vars
+  19:60  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Fabian\Desktop\Antigravity\Auto-modif\components\sections\team.tsx
+  4:16  warning  'Phone' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Fabian\Desktop\Antigravity\Auto-modif\components\ui\infinite-moving-cards.tsx
+   28:9   error    Error: Cannot access variable before it is declared
+
+`addAnimation` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+C:\Users\Fabian\Desktop\Antigravity\Auto-modif\components\ui\infinite-moving-cards.tsx:28:9
+  26 |
+  27 |     useEffect(() => {
+> 28 |         addAnimation();
+     |         ^^^^^^^^^^^^ `addAnimation` accessed before it is declared
+  29 |     }, []);
+  30 |
+  31 |     const [start, setStart] = useState(false);
+
+C:\Users\Fabian\Desktop\Antigravity\Auto-modif\components\ui\infinite-moving-cards.tsx:33:5
+  31 |     const [start, setStart] = useState(false);
+  32 |
+> 33 |     function addAnimation() {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |         if (containerRef.current && scrollerRef.current) {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 35 |             const scrollerContent = Array.from(scrollerRef.current.children);
+     ÔÇª
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 47 |         }
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 48 |     }
+     | ^^^^^^ `addAnimation` is declared here
+  49 |
+  50 |     const getDirection = () => {
+  51 |         if (containerRef.current) {  react-hooks/immutability
+   29:8   warning  React Hook useEffect has a missing dependency: 'addAnimation'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react-hooks/exhaustive-deps
+  109:33  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react/no-unescaped-entities
+  109:46  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react/no-unescaped-entities
+
+C:\Users\Fabian\Desktop\Antigravity\Auto-modif\components\ui\magnetic-button.tsx
+  47:26  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Fabian\Desktop\Antigravity\Auto-modif\components\ui\service-modal.tsx
+  15:16  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Fabian\Desktop\Antigravity\Auto-modif\next.config.ts
+  1:15  warning  'NextConfig' is defined but never used  @typescript-eslint/no-unused-vars
+
+Ô£û 24 problems (8 errors, 16 warnings)
+

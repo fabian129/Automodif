@@ -1,0 +1,876 @@
+<html lang="sv" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automodif | Auktoriserad Autoexperten Bilverkstad Västerås</title>
+    <meta name="description"
+        content="Professionell bilservice och reparation i Västerås. Auktoriserad Autoexperten-verkstad på Brynäsvägen 13.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #e30613;
+            /* Autoexperten Red */
+            --bg-dark: #030303;
+            --bg-card: #0A0A0A;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: #d4d4d8;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
+        /* Animations */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-element.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Marquee */
+        .marquee-mask {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-scroll {
+            animation: scroll 40s linear infinite;
+            display: flex;
+            width: max-content;
+        }
+
+        /* Custom Checkbox */
+        .checkbox-wrapper input:checked+div {
+            background-color: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* Bento Grid */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+            auto-flow: dense;
+        }
+
+        @media (min-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(6, 1fr);
+                grid-auto-rows: 200px;
+            }
+        }
+
+        .bento-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Inner Glow */
+        .bento-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.03), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .bento-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Grid Spans */
+        @media (min-width: 768px) {
+            .md\:col-span-2 {
+                grid-column: span 2;
+            }
+
+            .md\:col-span-3 {
+                grid-column: span 3;
+            }
+
+            .md\:col-span-4 {
+                grid-column: span 4;
+            }
+
+            .md\:row-span-2 {
+                grid-row: span 2;
+            }
+        }
+
+        /* Details/Summary Animation */
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] summary~* {
+            animation: sweep .3s ease-in-out;
+        }
+
+        @keyframes sweep {
+            0% {
+                opacity: 0;
+                transform: translateY(-5px)
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        /* Menu Overlay */
+        #menu-overlay {
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            transition: clip-path 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+        }
+
+        body.menu-active #menu-overlay {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .menu-link-item {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: 0.5s ease;
+        }
+
+        body.menu-active .menu-link-item {
+            transform: translateY(0);
+            opacity: 1;
+            transition-delay: 0.2s;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-red-600 selection:text-white">
+
+    <!-- FULL SCREEN MENU OVERLAY -->
+    <div id="menu-overlay" class="fixed inset-0 z-[60] bg-[#050505] flex flex-col justify-between p-6 md:p-12">
+        <div class="flex justify-between items-center w-full max-w-7xl mx-auto">
+            <button id="menu-close"
+                class="flex items-center gap-3 group text-white hover:text-red-600 transition-colors">
+                <div class="w-6 h-6 flex items-center justify-center relative">
+                    <span class="absolute w-full h-[1px] bg-current rotate-45"></span>
+                    <span class="absolute w-full h-[1px] bg-current -rotate-45"></span>
+                </div>
+                <span class="text-xs font-medium uppercase tracking-widest hidden md:block">Stäng</span>
+            </button>
+            <span class="text-sm font-semibold tracking-tight text-white">AUTOMODIF</span>
+        </div>
+
+        <div class="flex-1 flex flex-col justify-center items-center text-center gap-8">
+            <div class="menu-link-item">
+                <a href="#"
+                    class="text-4xl md:text-6xl font-medium text-white tracking-tight hover:text-red-600 transition-colors menu-close-trigger">Hem</a>
+            </div>
+            <div class="menu-link-item">
+                <a href="#services"
+                    class="text-4xl md:text-6xl font-medium text-white tracking-tight hover:text-red-600 transition-colors menu-close-trigger">Tjänster</a>
+            </div>
+            <div class="menu-link-item">
+                <a href="#process"
+                    class="text-4xl md:text-6xl font-medium text-white tracking-tight hover:text-red-600 transition-colors menu-close-trigger">Process</a>
+            </div>
+            <div class="menu-link-item">
+                <a href="#contact"
+                    class="text-4xl md:text-6xl font-medium text-white tracking-tight hover:text-red-600 transition-colors menu-close-trigger">Boka
+                    Tid</a>
+            </div>
+        </div>
+
+        <div class="w-full max-w-7xl mx-auto flex justify-between items-end border-t border-white/10 pt-8">
+            <div>
+                <span class="text-xs text-zinc-500 uppercase tracking-widest block mb-2">Verkstad</span>
+                <p class="text-sm text-zinc-300">Brynäsvägen 13, 724 74 Västerås</p>
+            </div>
+            <div class="text-right">
+                <span class="text-xs text-zinc-500 uppercase tracking-widest block mb-2">Kontakt</span>
+                <a href="tel:021123939" class="text-sm text-white hover:text-red-600 transition-colors">021-12 39 39</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#030303]/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <button id="menu-toggle" class="flex items-center gap-3 group">
+                <div class="w-6 h-[10px] flex flex-col justify-between items-start">
+                    <span class="w-full h-[1px] bg-white group-hover:bg-red-600 transition-colors"></span>
+                    <span
+                        class="w-2/3 h-[1px] bg-white group-hover:w-full group-hover:bg-red-600 transition-all"></span>
+                </div>
+                <span
+                    class="hidden md:block text-xs font-medium uppercase tracking-widest text-zinc-400 group-hover:text-white transition-colors">Meny</span>
+            </button>
+
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <span
+                    class="text-base font-semibold tracking-tight text-white group-hover:text-zinc-200 transition-colors">AUTOMODIF</span>
+            </a>
+
+            <a href="#contact"
+                class="hidden md:flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-white hover:text-red-600 transition-colors">
+                Boka Service
+                <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+            </a>
+
+            <!-- Mobile CTA Icon -->
+            <a href="#contact" class="md:hidden text-white">
+                <iconify-icon icon="solar:calendar-linear" width="20"></iconify-icon>
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20">
+        <!-- Abstract Dark Background -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&amp;w=2072&amp;auto=format&amp;fit=crop"
+                class="w-full h-full object-cover opacity-20 grayscale" alt="Workshop Background">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#030303] via-transparent to-[#030303]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8 reveal-element">
+                <div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                <span class="text-xs font-medium text-white tracking-wide">Auktoriserad Autoexperten Verkstad</span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-medium text-white tracking-tighter leading-[1.1] mb-6 reveal-element"
+                style="transition-delay: 100ms;">
+                Professionell Bilservice <br class="hidden md:block"> i Västerås.
+            </h1>
+
+            <p class="text-sm md:text-lg text-zinc-400 font-light max-w-xl mx-auto mb-10 reveal-element leading-relaxed"
+                style="transition-delay: 200ms;">
+                Certifierad service, transparenta priser och personlig omsorg om din bil.
+                Som en del av Autoexperten-nätverket erbjuder vi trygghet och kvalitetsgarantier.
+            </p>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 reveal-element"
+                style="transition-delay: 300ms;">
+                <a href="#contact"
+                    class="w-full md:w-auto px-8 py-3 bg-white text-black text-sm font-semibold rounded hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2">
+                    Boka Service
+                    <iconify-icon icon="solar:calendar-add-linear" width="18"></iconify-icon>
+                </a>
+                <a href="tel:021123939"
+                    class="w-full md:w-auto px-8 py-3 border border-white/10 text-white text-sm font-medium rounded hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
+                    <iconify-icon icon="solar:phone-calling-linear" width="18"></iconify-icon>
+                    021-12 39 39
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <iconify-icon icon="solar:mouse-minimalistic-linear" width="24" class="text-white"></iconify-icon>
+        </div>
+    </section>
+
+    <!-- BRAND MARQUEE -->
+    <section class="py-12 border-y border-white/5 bg-black/50">
+        <div class="max-w-7xl mx-auto px-6 mb-8 text-center">
+            <span class="text-xs text-zinc-500 uppercase tracking-widest">Vi servar alla märken</span>
+        </div>
+        <div class="w-full overflow-hidden marquee-mask">
+            <div class="animate-scroll gap-20 items-center opacity-40 grayscale">
+                <!-- Brand Icons (Using Iconify for simplicity to represent generic car brands or specific ones) -->
+                <div class="flex items-center gap-20 shrink-0">
+                    <iconify-icon icon="simple-icons:volvo" width="32" class="text-white"></iconify-icon>
+                    <iconify-icon icon="simple-icons:volkswagen" width="32" class="text-white"></iconify-icon>
+                    <iconify-icon icon="simple-icons:audi" width="32" class="text-white"></iconify-icon>
+                    <iconify-icon icon="simple-icons:bmw" width="32" class="text-white"></iconify-icon>
+                    <iconify-icon icon="simple-icons:mercedes" width="32" class="text-white"></iconify-icon>
+                    <iconify-icon icon="simple-icons:toyota" width="32" class="text-white"></iconify-icon>
+                    <iconify-icon icon="simple-icons:skoda" width="32" class="text-white"></iconify-icon>
+                    <iconify-icon icon="simple-icons:kia" width="32" class="text-white"></iconify-icon>
+                </div>
+                <!-- Duplicate for seamless scroll -->
+                <div class="flex items-center gap-20 shrink-0">
+                    <iconify-icon icon="simple-icons:volvo" width="32" class="text-white"></iconify-icon>
+                    <iconify-icon icon="simple-icons:volkswagen" width="32" class="text-white"></iconify-icon>
+                    <iconify-icon icon="simple-icons:audi" width="32" class="text-white"></iconify-icon>
+                    <iconify-icon icon="simple-icons:bmw" width="32" class="text-white"></iconify-icon>
+                    <iconify-icon icon="simple-icons:mercedes" width="32" class="text-white"></iconify-icon>
+                    <iconify-icon icon="simple-icons:toyota" width="32" class="text-white"></iconify-icon>
+                    <iconify-icon icon="simple-icons:skoda" width="32" class="text-white"></iconify-icon>
+                    <iconify-icon icon="simple-icons:kia" width="32" class="text-white"></iconify-icon>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRO SECTION -->
+    <section class="py-24 max-w-3xl mx-auto px-6 text-center reveal-element">
+        <h2 class="text-3xl md:text-4xl font-medium text-white tracking-tight mb-6">Välkommen till Automodif</h2>
+        <p class="text-zinc-400 font-light leading-relaxed">
+            Vi är en auktoriserad Autoexperten-verkstad belägen i Västerås med lång erfarenhet av bilservice och
+            reparationer.
+            Som en del av Autoexperten-nätverket erbjuder vi dig trygghet genom certifierade tekniker,
+            kvalitetsgarantier och transparenta priser.
+            Oavsett om det gäller enkel service, omfattande reparationer eller diagnostik, tar vi hand om din bil som om
+            den vore vår egen.
+        </p>
+    </section>
+
+    <!-- SERVICES BENTO GRID -->
+    <section id="services" class="py-12 bg-[#050505]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal-element">
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-medium text-white tracking-tight">Våra Tjänster</h3>
+                    <p class="text-zinc-500 text-sm mt-2">Komplett bilvård under ett tak.</p>
+                </div>
+                <div class="hidden md:block w-px h-12 bg-white/10"></div>
+            </div>
+
+            <div class="bento-grid reveal-element">
+                <!-- Service & Inspection -->
+                <div class="bento-card md:col-span-4 md:row-span-2 group p-8 flex flex-col justify-between">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div>
+                        <div
+                            class="w-10 h-10 rounded border border-white/10 flex items-center justify-center bg-zinc-900 mb-6 text-red-600">
+                            <iconify-icon icon="solar:clipboard-check-linear" width="24"></iconify-icon>
+                        </div>
+                        <h4 class="text-2xl font-medium text-white mb-3">Service &amp; Besiktning</h4>
+                        <p class="text-sm text-zinc-400 font-light max-w-sm">
+                            Regelbunden service enligt tillverkarens intervaller och komplett förberedelse inför
+                            besiktning. Vi stämplar din servicebok och säkerställer att nybilsgarantin gäller.
+                        </p>
+                    </div>
+                    <div class="flex gap-4 mt-8">
+                        <span
+                            class="px-3 py-1 rounded-full border border-white/10 text-xs text-zinc-400">Oljeservice</span>
+                        <span
+                            class="px-3 py-1 rounded-full border border-white/10 text-xs text-zinc-400">Filterbyte</span>
+                        <span
+                            class="px-3 py-1 rounded-full border border-white/10 text-xs text-zinc-400">Besiktningskontroll</span>
+                    </div>
+                </div>
+
+                <!-- Repairs -->
+                <div class="bento-card md:col-span-2 md:row-span-2 group p-8 flex flex-col">
+                    <div
+                        class="w-10 h-10 rounded border border-white/10 flex items-center justify-center bg-zinc-900 mb-6 text-zinc-300 group-hover:text-red-600 transition-colors">
+                        <iconify-icon icon="solar:wrench-linear" width="24"></iconify-icon>
+                    </div>
+                    <h4 class="text-xl font-medium text-white mb-3">Reparationer</h4>
+                    <p class="text-sm text-zinc-400 font-light mb-auto">
+                        Från bromsbyte och fjädring till avancerade motorarbeten. Vi använder kvalitetsdelar med
+                        garanti.
+                    </p>
+                    <div class="mt-6 pt-6 border-t border-white/5 flex flex-col gap-2">
+                        <div class="flex items-center gap-2 text-xs text-zinc-500">
+                            <iconify-icon icon="solar:check-circle-linear" class="text-red-600"></iconify-icon> Bromsar
+                            &amp; Fjädring
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-zinc-500">
+                            <iconify-icon icon="solar:check-circle-linear" class="text-red-600"></iconify-icon>
+                            Avgassystem
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tires -->
+                <div class="bento-card md:col-span-2 group p-6 flex flex-col justify-center">
+                    <div class="flex items-center gap-4 mb-2">
+                        <iconify-icon icon="solar:wheel-linear" width="24"
+                            class="text-zinc-400 group-hover:text-white transition-colors"></iconify-icon>
+                        <h4 class="text-lg font-medium text-white">Däck &amp; Hjul</h4>
+                    </div>
+                    <p class="text-xs text-zinc-500 font-light">
+                        Däckbyte, balansering och hjulinställning för optimal säkerhet.
+                    </p>
+                </div>
+
+                <!-- Diagnostics -->
+                <div class="bento-card md:col-span-2 group p-6 flex flex-col justify-center">
+                    <div class="flex items-center gap-4 mb-2">
+                        <iconify-icon icon="solar:monitor-camera-linear" width="24"
+                            class="text-zinc-400 group-hover:text-white transition-colors"></iconify-icon>
+                        <h4 class="text-lg font-medium text-white">Diagnostik</h4>
+                    </div>
+                    <p class="text-xs text-zinc-500 font-light">
+                        Avancerad felsökning av elektronik och motorstyrning.
+                    </p>
+                </div>
+
+                <!-- AC Service -->
+                <div class="bento-card md:col-span-2 group p-6 flex flex-col justify-center">
+                    <div class="flex items-center gap-4 mb-2">
+                        <iconify-icon icon="solar:snowflake-linear" width="24"
+                            class="text-zinc-400 group-hover:text-white transition-colors"></iconify-icon>
+                        <h4 class="text-lg font-medium text-white">AC-Service</h4>
+                    </div>
+                    <p class="text-xs text-zinc-500 font-light">
+                        Klimatservice, påfyllning och felsökning av AC-system.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US (Autoexperten Trust) -->
+    <section class="py-24 border-y border-white/5 relative overflow-hidden">
+        <div class="absolute inset-0 bg-red-900/5 radial-gradient opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="mb-16 text-center reveal-element">
+                <span class="text-xs text-red-600 font-semibold uppercase tracking-widest block mb-3">Trygghet &amp;
+                    Kvalitet</span>
+                <h3 class="text-3xl font-medium text-white tracking-tight">Varför välja Automodif?</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-element">
+                <div class="p-6 border border-white/5 bg-[#080808] rounded hover:border-white/10 transition-colors">
+                    <iconify-icon icon="solar:shield-check-linear" width="32" class="text-red-600 mb-4"></iconify-icon>
+                    <h4 class="text-lg font-medium text-white mb-2">Autoexperten Garanti</h4>
+                    <p class="text-sm text-zinc-400 font-light leading-relaxed">
+                        Som medlem i nätverket erbjuder vi 12 månaders fri vägassistans och 3 års funktionsgaranti på
+                        reservdelar.
+                    </p>
+                </div>
+                <div class="p-6 border border-white/5 bg-[#080808] rounded hover:border-white/10 transition-colors">
+                    <iconify-icon icon="solar:user-id-linear" width="32" class="text-red-600 mb-4"></iconify-icon>
+                    <h4 class="text-lg font-medium text-white mb-2">Certifierade Tekniker</h4>
+                    <p class="text-sm text-zinc-400 font-light leading-relaxed">
+                        Våra mekaniker genomgår regelbunden utbildning för att hantera modern fordonsteknik och
+                        diagnostik.
+                    </p>
+                </div>
+                <div class="p-6 border border-white/5 bg-[#080808] rounded hover:border-white/10 transition-colors">
+                    <iconify-icon icon="solar:wallet-linear" width="32" class="text-red-600 mb-4"></iconify-icon>
+                    <h4 class="text-lg font-medium text-white mb-2">Transparent Prissättning</h4>
+                    <p class="text-sm text-zinc-400 font-light leading-relaxed">
+                        Du får alltid en tydlig offert innan vi påbörjar arbetet. Inga dolda kostnader, inga
+                        överraskningar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="py-24 bg-[#030303]">
+        <div class="max-w-5xl mx-auto px-6">
+            <h3 class="text-2xl font-medium text-white mb-12 reveal-element">Så här går det till</h3>
+
+            <div class="space-y-4 reveal-element">
+                <!-- Step 1 -->
+                <div
+                    class="group border border-white/5 bg-[#0A0A0A] p-6 rounded flex items-start gap-6 hover:border-white/10 transition-all">
+                    <span
+                        class="text-2xl font-medium text-zinc-600 group-hover:text-red-600 transition-colors">01</span>
+                    <div>
+                        <h4 class="text-lg font-medium text-white mb-2">Kontakta &amp; Lämna in</h4>
+                        <p class="text-sm text-zinc-400 font-light">Ring 021-12 39 39 eller boka online. Lämna bilen på
+                            Brynäsvägen 13 för konsultation.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div
+                    class="group border border-white/5 bg-[#0A0A0A] p-6 rounded flex items-start gap-6 hover:border-white/10 transition-all">
+                    <span
+                        class="text-2xl font-medium text-zinc-600 group-hover:text-red-600 transition-colors">02</span>
+                    <div>
+                        <h4 class="text-lg font-medium text-white mb-2">Offert &amp; Reparation</h4>
+                        <p class="text-sm text-zinc-400 font-light">Vi felsöker och ger dig ett fast pris. Arbetet
+                            utförs av certifierade tekniker med kvalitetsdelar.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div
+                    class="group border border-white/5 bg-[#0A0A0A] p-6 rounded flex items-start gap-6 hover:border-white/10 transition-all">
+                    <span
+                        class="text-2xl font-medium text-zinc-600 group-hover:text-red-600 transition-colors">03</span>
+                    <div>
+                        <h4 class="text-lg font-medium text-white mb-2">Kvalitetskontroll &amp; Avhämtning</h4>
+                        <p class="text-sm text-zinc-400 font-light">Bilen testas och kontrolleras. Du hämtar bilen, får
+                            kvitto och stämplad servicebok.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-24 bg-[#050505] border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <h3 class="text-2xl font-medium text-white text-center mb-16 reveal-element">Vad våra kunder säger</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-element">
+                <div class="p-8 bg-[#0A0A0A] border border-white/5 rounded">
+                    <div class="flex gap-1 text-red-600 mb-4">
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-zinc-300 font-light italic mb-6">"Proffsig verkstad med trevlig personal.
+                        Allt gjordes som utlovat och till överenskommet pris."</p>
+                    <span class="text-xs text-zinc-500 font-medium uppercase tracking-wider">— Anders L.</span>
+                </div>
+                <div class="p-8 bg-[#0A0A0A] border border-white/5 rounded">
+                    <div class="flex gap-1 text-red-600 mb-4">
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-zinc-300 font-light italic mb-6">"Har lämnat min bil här flera gånger och
+                        alltid fått bra service. De förklarar vad som behöver göras."</p>
+                    <span class="text-xs text-zinc-500 font-medium uppercase tracking-wider">— Maria S.</span>
+                </div>
+                <div class="p-8 bg-[#0A0A0A] border border-white/5 rounded">
+                    <div class="flex gap-1 text-red-600 mb-4">
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="14"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-zinc-300 font-light italic mb-6">"Snabb och pålitlig service. Bra att de är
+                        anslutna till Autoexperten, ger extra trygghet."</p>
+                    <span class="text-xs text-zinc-500 font-medium uppercase tracking-wider">— Johan K.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & LOCATION -->
+    <section id="contact" class="py-24 border-t border-white/5 bg-[#030303]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+
+                <!-- Contact Info -->
+                <div class="reveal-element">
+                    <h3 class="text-3xl font-medium text-white mb-2">Hitta till oss</h3>
+                    <p class="text-zinc-500 font-light text-sm mb-8">Välkommen till Brynäsvägen 13.</p>
+
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center shrink-0 text-white">
+                                <iconify-icon icon="solar:map-point-linear" width="20"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-medium text-white">Besöksadress</h4>
+                                <p class="text-sm text-zinc-400 font-light mt-1">Automodif<br>Brynäsvägen 13<br>724 74
+                                    Västerås</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center shrink-0 text-white">
+                                <iconify-icon icon="solar:phone-calling-linear" width="20"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-medium text-white">Ring Oss</h4>
+                                <a href="tel:021123939"
+                                    class="text-sm text-zinc-400 font-light mt-1 hover:text-white transition-colors">021-12
+                                    39 39</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center shrink-0 text-white">
+                                <iconify-icon icon="solar:clock-circle-linear" width="20"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-medium text-white">Öppettider</h4>
+                                <p class="text-sm text-zinc-400 font-light mt-1">
+                                    Måndag–Fredag: 07:00–17:00<br>
+                                    Lördag: Enligt överenskommelse<br>
+                                    Söndag: Stängt
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Placeholder -->
+                    <div
+                        class="mt-8 w-full h-48 bg-zinc-900 rounded border border-white/5 flex items-center justify-center group overflow-hidden relative">
+                        <div
+                            class="absolute inset-0 bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=Brynäsvägen+13,Västerås&amp;zoom=14&amp;size=600x300&amp;maptype=roadmap&amp;sensor=false')] bg-cover bg-center opacity-50 grayscale group-hover:grayscale-0 transition-all">
+                        </div>
+                        <a href="https://maps.google.com/?q=Brynäsvägen+13,72474,Västerås" target="_blank"
+                            class="relative z-10 px-4 py-2 bg-white text-black text-xs font-semibold rounded shadow-lg flex items-center gap-2">
+                            Öppna i Google Maps
+                            <iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="bg-[#0A0A0A] border border-white/10 p-8 rounded reveal-element delay-100">
+                    <h3 class="text-2xl font-medium text-white mb-6">Boka Service</h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="group">
+                                <label
+                                    class="block text-xs uppercase tracking-widest text-zinc-500 mb-2 group-focus-within:text-white transition-colors">Namn</label>
+                                <input type="text"
+                                    class="w-full bg-transparent border-b border-white/10 py-2 text-white outline-none focus:border-red-600 transition-colors text-sm placeholder:text-zinc-700"
+                                    placeholder="Anders Andersson">
+                            </div>
+                            <div class="group">
+                                <label
+                                    class="block text-xs uppercase tracking-widest text-zinc-500 mb-2 group-focus-within:text-white transition-colors">Tel</label>
+                                <input type="tel"
+                                    class="w-full bg-transparent border-b border-white/10 py-2 text-white outline-none focus:border-red-600 transition-colors text-sm placeholder:text-zinc-700"
+                                    placeholder="070-123 45 67">
+                            </div>
+                        </div>
+
+                        <div class="group">
+                            <label
+                                class="block text-xs uppercase tracking-widest text-zinc-500 mb-2 group-focus-within:text-white transition-colors">Bil
+                                (Reg.nr)</label>
+                            <input type="text"
+                                class="w-full bg-transparent border-b border-white/10 py-2 text-white outline-none focus:border-red-600 transition-colors text-sm placeholder:text-zinc-700"
+                                placeholder="ABC 123">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-3">Behov</label>
+                            <div class="flex flex-wrap gap-2">
+                                <label class="checkbox-wrapper cursor-pointer">
+                                    <input type="checkbox" class="hidden">
+                                    <div
+                                        class="px-4 py-2 border border-white/10 text-xs text-zinc-400 rounded hover:border-white transition-all select-none">
+                                        Service</div>
+                                </label>
+                                <label class="checkbox-wrapper cursor-pointer">
+                                    <input type="checkbox" class="hidden">
+                                    <div
+                                        class="px-4 py-2 border border-white/10 text-xs text-zinc-400 rounded hover:border-white transition-all select-none">
+                                        Reparation</div>
+                                </label>
+                                <label class="checkbox-wrapper cursor-pointer">
+                                    <input type="checkbox" class="hidden">
+                                    <div
+                                        class="px-4 py-2 border border-white/10 text-xs text-zinc-400 rounded hover:border-white transition-all select-none">
+                                        Besiktning</div>
+                                </label>
+                                <label class="checkbox-wrapper cursor-pointer">
+                                    <input type="checkbox" class="hidden">
+                                    <div
+                                        class="px-4 py-2 border border-white/10 text-xs text-zinc-400 rounded hover:border-white transition-all select-none">
+                                        Annat</div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="group">
+                            <label
+                                class="block text-xs uppercase tracking-widest text-zinc-500 mb-2 group-focus-within:text-white transition-colors">Meddelande</label>
+                            <textarea
+                                class="w-full bg-transparent border-b border-white/10 py-2 text-white outline-none focus:border-red-600 transition-colors text-sm placeholder:text-zinc-700 resize-none"
+                                rows="2" placeholder="Beskriv problemet kort..."></textarea>
+                        </div>
+
+                        <button type="button"
+                            class="w-full bg-white text-black py-3 rounded text-sm font-semibold hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2 group">
+                            Skicka Förfrågan
+                            <iconify-icon icon="solar:arrow-right-linear" width="16"
+                                class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black pt-16 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-1">
+                    <span class="text-lg font-semibold tracking-tight text-white block mb-4">AUTOMODIF</span>
+                    <p class="text-xs text-zinc-500 leading-relaxed max-w-xs">
+                        Automodif är en auktoriserad Autoexperten-verkstad i Västerås. Vi erbjuder professionell
+                        bilservice med personlig touch och moderna verktyg.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-semibold text-white uppercase tracking-widest mb-4">Snabblänkar</h4>
+                    <ul class="space-y-2 text-xs text-zinc-500">
+                        <li><a href="#" class="hover:text-white transition-colors">Våra Tjänster</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Om Oss</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Kontakta Oss</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Boka Tid</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-semibold text-white uppercase tracking-widest mb-4">Tjänster</h4>
+                    <ul class="space-y-2 text-xs text-zinc-500">
+                        <li><a href="#" class="hover:text-white transition-colors">Service &amp; Besiktning</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Reparationer</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Däck &amp; Hjul</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Diagnostik</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-semibold text-white uppercase tracking-widest mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-xs text-zinc-500">
+                        <li>Brynäsvägen 13</li>
+                        <li>724 74 Västerås</li>
+                        <li><a href="tel:021123939" class="hover:text-white transition-colors">021-12 39 39</a></li>
+                        <li class="pt-2 text-[10px] text-zinc-600">Öppet: Mån–Fre 07:00–17:00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-zinc-600 uppercase tracking-widest">
+                <span>© 2026 Automodif. Alla rättigheter reserverade.</span>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <span class="flex items-center gap-1"><iconify-icon icon="solar:shield-check-linear"></iconify-icon>
+                        Auktoriserad Autoexperten</span>
+                    <a href="#" class="hover:text-white transition-colors">Integritetspolicy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Cursor & Scripts -->
+    <div id="custom-cursor"
+        class="fixed top-0 left-0 w-4 h-4 bg-white rounded-full pointer-events-none z-[100] mix-blend-difference transition-transform duration-75 ease-out -translate-x-1/2 -translate-y-1/2 hidden md:block">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Intersection Observer for Reveal
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal-element').forEach(el => observer.observe(el));
+
+            // Menu Logic
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const menuOverlay = document.getElementById('menu-overlay');
+            const closeTriggers = document.querySelectorAll('.menu-close-trigger');
+
+            function toggleMenu() {
+                document.body.classList.toggle('menu-active');
+            }
+
+            if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+            if (menuClose) menuClose.addEventListener('click', toggleMenu);
+
+            closeTriggers.forEach(link => {
+                link.addEventListener('click', () => {
+                    document.body.classList.remove('menu-active');
+                });
+            });
+
+            // Bento Grid Hover Effect (Mouse tracking)
+            const cards = document.querySelectorAll('.bento-card');
+            document.addEventListener('mousemove', e => {
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+
+            // Custom Cursor
+            const cursor = document.getElementById('custom-cursor');
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+            });
+
+            document.querySelectorAll('a, button, input, label').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('scale-[3]'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('scale-[3]'));
+            });
+        });
+    </script>
+
+</body>
+
+</html>
