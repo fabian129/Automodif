@@ -5,6 +5,8 @@ import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { MouseTracker } from "@/components/ui/mouse-tracker";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
+import { Preloader } from "@/components/ui/preloader";
+import { GoogleAnalytics } from "@/components/analytics";
 
 
 
@@ -87,6 +89,7 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
+          <Preloader />
           <MouseTracker />
           <SmoothScroll>
             <Navbar />
@@ -104,37 +107,40 @@ export default function RootLayout({
               "name": "Automodif",
               "image": "https://automodif.se/images/og-image.jpg",
               "url": "https://automodif.se",
-              "telephone": "021-12 39 39",
+              "telephone": "021-14 15 60",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Strömledningsgatan 1",
+                "streetAddress": "Brandthovdagatan 15",
                 "addressLocality": "Västerås",
-                "postalCode": "721 37",
+                "postalCode": "721 35",
                 "addressCountry": "SE"
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 59.6099,
-                "longitude": 16.5448
+                "latitude": 59.6175,
+                "longitude": 16.5523
               },
               "openingHoursSpecification": [
                 {
                   "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday"
-                  ],
-                  "opens": "07:00",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "08:00",
                   "closes": "17:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Saturday"],
+                  "opens": "10:00",
+                  "closes": "14:00"
                 }
               ],
               "priceRange": "$$"
             })
           }}
         />
+        {process.env.NEXT_PUBLIC_GA4_ID ? (
+          <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA4_ID} />
+        ) : null}
       </body>
     </html>
   );

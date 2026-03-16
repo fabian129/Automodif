@@ -105,7 +105,7 @@ export const InfiniteMovingCards = ({
                             {/* Quote Icon Background */}
                             <Quote className="absolute top-6 right-6 w-10 h-10 text-primary/10 fill-primary/5 stroke-none" />
 
-                            <span className=" relative z-20 text-lg leading-[1.6] text-zinc-700 dark:text-white font-light italic">
+                            <span className=" relative z-20 text-lg leading-[1.6] text-zinc-700 dark:text-white font-normal italic">
                                 &quot;{item.quote}&quot;
                             </span>
                             <div className="relative z-20 mt-8 flex flex-row items-center gap-4">

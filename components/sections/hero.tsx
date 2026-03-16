@@ -1,26 +1,47 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
 import { Calendar, Phone } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { GoogleReviewBadge } from "@/components/ui/google-review-badge";
-
-
+import { useEffect, useRef } from "react";
 
 export function Hero() {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    video.play().catch(() => {});
+                } else {
+                    video.pause();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        observer.observe(video);
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20 pb-40">
-            {/* Bright Workshop Background */}
-            {/* Background Video - Visible mostly in Dark Mode */}
+            {/* Background Video - Visible in Dark Mode */}
             <div className="absolute inset-0 z-0 hidden dark:block">
                 <video
-                    autoPlay
+                    ref={videoRef}
                     loop
                     muted
                     playsInline
+                    preload="none"
                     className="w-full h-full object-cover"
                     poster="/images/hero-new.jpg"
                 >
-                    <source src="/videos/hero-video.mp4" type="video/mp4" />
+                    <source src="/videos/0 Car Repair Mechanic 1920X1080.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-black/55"></div>
             </div>
@@ -42,13 +63,22 @@ export function Hero() {
                 </Reveal>
 
                 <Reveal delay={0.1}>
-                    <h1 className="text-5xl md:text-7xl font-medium text-zinc-950 dark:text-white tracking-tighter leading-[1.1] mb-6 drop-shadow-md">
-                        Auktoriserad <br className="hidden md:block" /> Autoexperten-verkstad i Västerås
+                    <h1
+                        className="text-[5rem] md:text-[9rem] font-bold text-zinc-950 dark:text-white tracking-tighter leading-none mb-3 drop-shadow-lg"
+                        style={{ fontFamily: "var(--font-display)" }}
+                    >
+                        AUTOMODIF
                     </h1>
                 </Reveal>
 
                 <Reveal delay={0.2}>
-                    <p className="text-base md:text-xl text-zinc-700 dark:text-white font-light max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-sm">
+                    <h2 className="text-xl md:text-3xl font-medium text-zinc-600 dark:text-white/80 tracking-tight leading-snug mb-6 drop-shadow-sm">
+                        Auktoriserad Autoexperten-verkstad i Västerås
+                    </h2>
+                </Reveal>
+
+                <Reveal delay={0.3}>
+                    <p className="text-base md:text-xl text-zinc-700 dark:text-white font-normal max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-sm">
                         Certifierad service, transparenta priser och personlig omsorg om din
                         bil. Som en del av Autoexperten-nätverket erbjuder vi trygghet och
                         kvalitetsgarantier.
@@ -66,11 +96,11 @@ export function Hero() {
                         </Link>
 
                         <a
-                            href="tel:021123939"
+                            href="tel:021141560"
                             className="w-full md:w-auto px-8 py-3 border border-zinc-200 dark:border-white/20 bg-white/50 dark:bg-white/10 backdrop-blur-sm text-zinc-900 dark:text-white text-sm font-medium rounded hover:bg-zinc-100 dark:hover:bg-white/20 transition-colors flex items-center justify-center gap-2"
                         >
                             <Phone className="w-4 h-4" />
-                            021-12 39 39
+                            021-14 15 60
                         </a>
                     </div>
                 </Reveal>

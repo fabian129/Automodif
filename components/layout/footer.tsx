@@ -28,12 +28,12 @@ export function Footer() {
                         </h4>
                         <ul className="space-y-4 text-sm text-zinc-500">
                             <li>
-                                <Link href="#" className="hover:text-zinc-900 dark:hover:text-white transition-colors">
+                                <Link href="#services" className="hover:text-zinc-900 dark:hover:text-white transition-colors">
                                     Våra Tjänster
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#" className="hover:text-zinc-900 dark:hover:text-white transition-colors">
+                                <Link href="#team" className="hover:text-zinc-900 dark:hover:text-white transition-colors">
                                     Om Oss
                                 </Link>
                             </li>
@@ -76,17 +76,27 @@ export function Footer() {
                             Kontakt
                         </h4>
                         <ul className="space-y-4 text-sm text-zinc-500">
-                            <li>Brynäsvägen 13, 724 74 Västerås</li>
+                            <li>Brandthovdagatan 15, 721 35 Västerås</li>
                             <li>
+                                <span className="text-xs text-zinc-400 uppercase tracking-wider block mb-1">Växel</span>
                                 <a
-                                    href="tel:021123939"
+                                    href="tel:021141560"
                                     className="hover:text-zinc-900 dark:hover:text-white transition-colors"
                                 >
-                                    021-12 39 39
+                                    021-14 15 60
+                                </a>
+                            </li>
+                            <li>
+                                <span className="text-xs text-zinc-400 uppercase tracking-wider block mb-1">Direktnummer</span>
+                                <a
+                                    href="tel:0760826277"
+                                    className="hover:text-zinc-900 dark:hover:text-white transition-colors"
+                                >
+                                    076-082 62 77
                                 </a>
                             </li>
                             <li className="text-xs text-zinc-500 uppercase tracking-wider pt-2">
-                                Mån–Fre 07:00–17:00
+                                Mån–Fre 08:00–17:00 &middot; Lör 10:00–14:00
                             </li>
                         </ul>
                     </div>

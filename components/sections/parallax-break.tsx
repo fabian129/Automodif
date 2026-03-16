@@ -20,6 +20,9 @@ export function ParallaxBreak() {
                     src="/images/woman-sitting-electo-car.jpg"
                     alt="Workshop Detail"
                     fill
+                    sizes="100vw"
+                    quality={80}
+                    loading="lazy"
                     className="object-cover opacity-60"
                 />
             </motion.div>

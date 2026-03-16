@@ -20,7 +20,7 @@ export function Intro() {
                 </Reveal>
 
                 <Reveal delay={0.1} className="mx-auto">
-                    <p className="text-xl md:text-3xl text-muted-foreground dark:text-zinc-400 font-light leading-relaxed max-w-3xl mx-auto">
+                    <p className="text-xl md:text-3xl text-muted-foreground dark:text-zinc-400 font-normal leading-relaxed max-w-3xl mx-auto">
                         Vi är en <span className="text-foreground dark:text-white font-normal">auktoriserad Autoexperten-verkstad</span> med
                         <span className="text-foreground dark:text-white font-normal"> lång erfarenhet</span> av bilservice.
                         Som en del av nätverket erbjuder vi dig <span className="text-foreground dark:text-white font-normal">trygghet</span> genom

@@ -40,7 +40,7 @@ export function Testimonials() {
                     <h3 className="text-4xl md:text-5xl font-medium text-zinc-950 dark:text-white tracking-tighter mb-6">
                         Vad våra kunder säger
                     </h3>
-                    <p className="text-zinc-500 dark:text-zinc-400 text-lg md:text-xl font-light leading-relaxed">
+                    <p className="text-zinc-500 dark:text-zinc-400 text-lg md:text-xl font-normal leading-relaxed">
                         Vi är stolta över vårt rykte. Här är några ord från våra nöjda kunder i Västerås.
                     </p>
                 </Reveal>

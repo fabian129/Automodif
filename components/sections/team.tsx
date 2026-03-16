@@ -1,7 +1,7 @@
 "use client";
 
 import { Reveal } from "@/components/ui/reveal";
-import { Mail, Linkedin } from "lucide-react";
+
 import Image from "next/image";
 
 const team = [
@@ -42,7 +42,7 @@ export function Team() {
                     <h3 className="text-4xl md:text-5xl font-medium text-zinc-950 dark:text-white tracking-tighter mb-6">
                         Expertis på plats
                     </h3>
-                    <p className="text-zinc-500 dark:text-zinc-400 text-lg md:text-xl font-light leading-relaxed">
+                    <p className="text-zinc-500 dark:text-zinc-400 text-lg md:text-xl font-normal leading-relaxed">
                         Ett dedikerat team av certifierade tekniker och rådgivare som brinner för din bil.
                     </p>
                 </Reveal>
@@ -54,25 +54,16 @@ export function Team() {
                                 {/* Image Container */}
                                 <div className="relative aspect-[3/4] overflow-hidden rounded-3xl mb-6 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 shadow-lg group-hover:border-primary/30 group-hover:shadow-[0_0_30px_-5px_rgba(0,82,204,0.3)] transition-all duration-700">
 
-                                    {/* Gradient Overlay for Text Readability */}
+                                    {/* Gradient Overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500 z-10" />
-
-                                    {/* Social Icons Overlay (Slide Up) */}
-                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 bg-black/40 backdrop-blur-[2px]">
-                                        <div className="flex gap-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                                            <button className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-primary hover:border-primary hover:scale-110 transition-all duration-300">
-                                                <Linkedin className="w-5 h-5" />
-                                            </button>
-                                            <button className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-primary hover:border-primary hover:scale-110 transition-all duration-300">
-                                                <Mail className="w-5 h-5" />
-                                            </button>
-                                        </div>
-                                    </div>
 
                                     <Image
                                         src={member.image}
                                         alt={member.name}
                                         fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                                        quality={80}
+                                        loading="lazy"
                                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                 </div>
@@ -85,7 +76,7 @@ export function Team() {
                                     <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">
                                         {member.role}
                                     </p>
-                                    <p className="text-zinc-500 dark:text-zinc-400 font-light leading-relaxed text-sm">
+                                    <p className="text-zinc-500 dark:text-zinc-400 font-normal leading-relaxed text-sm">
                                         {member.bio}
                                     </p>
                                 </div>

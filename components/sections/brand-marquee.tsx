@@ -8,7 +8,7 @@ const BRANDS = [
     { name: "Volkswagen", slug: "volkswagen" },
     { name: "Audi", slug: "audi" },
     { name: "BMW", slug: "bmw" },
-    { name: "Mercedes-Benz", slug: "mercedes" },
+    { name: "Porsche", slug: "porsche" },
     { name: "Toyota", slug: "toyota" },
     { name: "Skoda", slug: "skoda" },
     { name: "Kia", slug: "kia" },

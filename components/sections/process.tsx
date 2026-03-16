@@ -48,7 +48,7 @@ export function Process() {
                     <h3 className="text-5xl md:text-7xl font-medium text-zinc-950 dark:text-white tracking-tighter mb-8 leading-[1.1]">
                         Så här <span className="text-primary">funkar det</span>
                     </h3>
-                    <p className="text-xl md:text-2xl text-zinc-500 dark:text-white font-light max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-xl md:text-2xl text-zinc-500 dark:text-white font-normal max-w-2xl mx-auto leading-relaxed">
                         Från bokning till upphämtning. Vi har <span className="text-zinc-900 dark:text-white font-normal">minimerat krånglet</span> så att du kan tänka på annat.
                     </p>
                 </Reveal>
@@ -88,7 +88,7 @@ export function Process() {
                                                     <h4 className="text-3xl md:text-4xl font-medium text-primary mb-4 tracking-tight transition-colors duration-500">
                                                         {step.title}
                                                     </h4>
-                                                    <p className="text-lg md:text-xl text-zinc-600 dark:text-white/80 font-light leading-relaxed group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
+                                                    <p className="text-lg md:text-xl text-zinc-600 dark:text-white/80 font-normal leading-relaxed group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
                                                         {step.description}
                                                     </p>
                                                 </div>
@@ -124,7 +124,7 @@ export function Process() {
                                                 <h4 className="text-2xl md:text-4xl font-medium text-primary mb-4 tracking-tight transition-colors duration-500">
                                                     {step.title}
                                                 </h4>
-                                                <p className="text-base md:text-xl text-zinc-600 dark:text-white/80 font-light leading-relaxed group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
+                                                <p className="text-base md:text-xl text-zinc-600 dark:text-white/80 font-normal leading-relaxed group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
                                                     {step.description}
                                                 </p>
                                             </div>
@@ -159,7 +159,7 @@ export function Process() {
                             <h4 className="text-3xl md:text-5xl font-medium text-zinc-950 dark:text-white mb-6 tracking-tight">
                                 Redo att boka tid?
                             </h4>
-                            <p className="text-lg text-zinc-600 dark:text-zinc-400 font-light max-w-xl mx-auto mb-10 leading-relaxed">
+                            <p className="text-lg text-zinc-600 dark:text-zinc-400 font-normal max-w-xl mx-auto mb-10 leading-relaxed">
                                 Vi ser till att din bil rullar säkert på vägarna igen. Boka din tid online eller ring oss direkt.
                             </p>
 

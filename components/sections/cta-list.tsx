@@ -7,21 +7,24 @@ import { Reveal } from "@/components/ui/reveal";
 const ctaItems = [
     {
         title: "Boka Service Nu",
-        href: "/boka",
+        href: "#contact",
         description: "Lediga tider finns tillgängliga",
-        icon: Calendar
+        icon: Calendar,
+        external: false,
     },
     {
         title: "Få Gratis Offert",
-        href: "/offert",
+        href: "#contact",
         description: "Svar inom 24 timmar",
-        icon: Calculator
+        icon: Calculator,
+        external: false,
     },
     {
         title: "Hitta Till Verkstaden",
-        href: "/kontakt",
-        description: "Hälla, Västerås",
-        icon: MapPin
+        href: "https://maps.google.com/?q=Brandthovdagatan+15,+721+35+Västerås",
+        description: "Brandthovdagatan 15, Västerås",
+        icon: MapPin,
+        external: true,
     },
 ];
 
@@ -34,6 +37,8 @@ export function CTAList() {
                         <Reveal key={i} width="100%" delay={i * 0.1} overflowVisible>
                             <Link
                                 href={item.href}
+                                target={item.external ? "_blank" : undefined}
+                                rel={item.external ? "noopener noreferrer" : undefined}
                                 className="group relative flex items-center justify-between py-8 md:py-12 border-t border-zinc-200 dark:border-white/5 hover:border-zinc-300 dark:hover:border-white/10 transition-all duration-500"
                             >
                                 {/* Hover Gradient Background */}

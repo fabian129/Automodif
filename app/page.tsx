@@ -6,7 +6,9 @@ import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { Process } from "@/components/sections/process";
 import { Team } from "@/components/sections/team";
 import { Testimonials } from "@/components/sections/testimonials";
+import { FAQ } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
+import { JobApplication } from "@/components/sections/job-application";
 
 import { GalleryGrid } from "@/components/sections/gallery-grid";
 import { CTAList } from "@/components/sections/cta-list";
@@ -24,8 +26,10 @@ export default function Home() {
       <WhyChooseUs />
       <Process />
       <ParallaxBreak />
-      <Team />
+      {/* <Team /> */}
+      <FAQ />
       <Testimonials />
+      <JobApplication />
       <Contact />
     </>
   );

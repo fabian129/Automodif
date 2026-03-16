@@ -79,7 +79,7 @@ export function ServicesBento() {
                             <h3 className="text-5xl md:text-7xl font-medium text-zinc-950 dark:text-white tracking-tighter mb-6">
                                 Våra Tjänster
                             </h3>
-                            <p className="text-zinc-500 dark:text-zinc-400 text-lg md:text-xl font-light max-w-2xl leading-relaxed">
+                            <p className="text-zinc-500 dark:text-zinc-400 text-lg md:text-xl font-normal max-w-2xl leading-relaxed">
                                 Komplett bilvård under ett tak. Från <span className="text-zinc-900 dark:text-white font-normal">enkel service</span> till <span className="text-zinc-900 dark:text-white font-normal">avancerad diagnostik</span>.
                             </p>
                         </div>
@@ -105,6 +105,9 @@ export function ServicesBento() {
                                     src="/images/gallery/real-2.jpg"
                                     alt="Service Workshop"
                                     fill
+                                    sizes="(max-width: 768px) 100vw, 66vw"
+                                    quality={80}
+                                    loading="lazy"
                                     className="object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
@@ -120,7 +123,7 @@ export function ServicesBento() {
                                 <h4 className="text-3xl md:text-4xl font-medium text-white mb-4 tracking-tight drop-shadow-md">
                                     Service & Besiktning
                                 </h4>
-                                <p className="text-base md:text-lg text-zinc-300 font-light max-w-md leading-relaxed drop-shadow-sm">
+                                <p className="text-base md:text-lg text-zinc-300 font-normal max-w-md leading-relaxed drop-shadow-sm">
                                     Regelbunden service enligt tillverkarens intervaller. Vi stämplar din servicebok och säkerställer att <span className="text-white font-normal">nybilsgarantin gäller</span>.
                                 </p>
                             </div>
@@ -153,6 +156,9 @@ export function ServicesBento() {
                                     src="/images/gallery/bento-tech.jpg"
                                     alt="Car Repair"
                                     fill
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                    quality={80}
+                                    loading="lazy"
                                     className="object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
@@ -165,7 +171,7 @@ export function ServicesBento() {
                                 <h4 className="text-2xl font-medium text-white mb-4 tracking-tight drop-shadow-md">
                                     Reparationer
                                 </h4>
-                                <p className="text-sm text-zinc-300 font-light mb-auto leading-relaxed drop-shadow-sm">
+                                <p className="text-sm text-zinc-300 font-normal mb-auto leading-relaxed drop-shadow-sm">
                                     Från bromsar till motorarbeten. Vi använder alltid <span className="text-white font-normal">original-delar</span> eller motsvarande.
                                 </p>
                                 <div className="mt-8 pt-6 border-t border-white/10 flex flex-col gap-3 w-full">
@@ -195,6 +201,9 @@ export function ServicesBento() {
                                     src="/images/gallery/real-1.jpg"
                                     alt="Tyres and Wheels"
                                     fill
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                    quality={80}
+                                    loading="lazy"
                                     className="object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-700"
                                 />
                                 <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors" />
@@ -207,7 +216,7 @@ export function ServicesBento() {
                                         Däck & Hjul
                                     </h4>
                                 </div>
-                                <p className="text-sm text-zinc-400 font-light leading-relaxed drop-shadow-sm">
+                                <p className="text-sm text-zinc-400 font-normal leading-relaxed drop-shadow-sm">
                                     Skifte, balansering och hjulinställning för optimal säkerhet.
                                 </p>
                             </div>
@@ -226,6 +235,9 @@ export function ServicesBento() {
                                     src="/images/gallery/bento-girl.jpg"
                                     alt="Diagnostics"
                                     fill
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                    quality={80}
+                                    loading="lazy"
                                     className="object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-700"
                                 />
                                 <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors" />
@@ -236,7 +248,7 @@ export function ServicesBento() {
                                     <Monitor className="w-8 h-8 text-zinc-500 group-hover:text-white transition-colors" strokeWidth={1} />
                                     <h4 className="text-xl font-medium text-white tracking-tight drop-shadow-md">Diagnostik</h4>
                                 </div>
-                                <p className="text-sm text-zinc-400 font-light leading-relaxed drop-shadow-sm">
+                                <p className="text-sm text-zinc-400 font-normal leading-relaxed drop-shadow-sm">
                                     Avancerad felsökning av elektronik och motorstyrning.
                                 </p>
                             </div>
@@ -255,6 +267,9 @@ export function ServicesBento() {
                                     src="/images/gallery/bento-seats.jpg"
                                     alt="AC Service"
                                     fill
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                    quality={80}
+                                    loading="lazy"
                                     className="object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-700"
                                 />
                                 <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors" />
@@ -265,7 +280,7 @@ export function ServicesBento() {
                                     <Snowflake className="w-8 h-8 text-zinc-500 group-hover:text-white transition-colors" strokeWidth={1} />
                                     <h4 className="text-xl font-medium text-white tracking-tight drop-shadow-md">AC-Service</h4>
                                 </div>
-                                <p className="text-sm text-zinc-400 font-light leading-relaxed drop-shadow-sm">
+                                <p className="text-sm text-zinc-400 font-normal leading-relaxed drop-shadow-sm">
                                     Klimatservice, läcksökning och påfyllning.
                                 </p>
                             </div>

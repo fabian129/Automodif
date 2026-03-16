@@ -28,44 +28,51 @@ export function Navbar() {
                     scrolled ? "bg-white/95 dark:bg-[#030303]/95" : "bg-white/80 dark:bg-[#030303]/80"
                 )}
             >
-                <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                    <button
-                        onClick={toggleMenu}
-                        className="flex items-center gap-3 group"
-                    >
-                        <div className="w-6 h-[10px] flex flex-col justify-between items-start">
-                            <span className="w-full h-[1px] bg-zinc-900 dark:bg-white group-hover:bg-[var(--primary)] transition-colors"></span>
-                            <span className="w-2/3 h-[1px] bg-zinc-900 dark:bg-white group-hover:w-full group-hover:bg-[var(--primary)] transition-all"></span>
-                        </div>
-                        <span className="hidden md:block text-xs font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
-                            Meny
-                        </span>
-                    </button>
+                <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between relative">
+                    {/* Left: Menu */}
+                    <div className="flex-1 flex justify-start">
+                        <button
+                            onClick={toggleMenu}
+                            className="flex items-center gap-3 group"
+                        >
+                            <div className="w-6 h-[10px] flex flex-col justify-between items-start">
+                                <span className="w-full h-[1px] bg-zinc-900 dark:bg-white group-hover:bg-[var(--primary)] transition-colors"></span>
+                                <span className="w-2/3 h-[1px] bg-zinc-900 dark:bg-white group-hover:w-full group-hover:bg-[var(--primary)] transition-all"></span>
+                            </div>
+                            <span className="hidden md:block text-xs font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
+                                Meny
+                            </span>
+                        </button>
+                    </div>
 
-                    <Link href="/" className="flex items-center gap-2 group">
+                    {/* Center: Logo (Absolutely positioned to guarantee true center) */}
+                    <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 group">
                         <div className="w-2 h-2 bg-[var(--primary)] rounded-full"></div>
                         <span className="text-base font-semibold tracking-tight text-zinc-900 dark:text-white group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors">
                             AUTOMODIF
                         </span>
                     </Link>
 
-                    <div className="hidden md:flex items-center gap-6">
-                        <Link
-                            href="#contact"
-                            className="flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-zinc-900 dark:text-white hover:text-[var(--primary)] transition-colors"
-                        >
-                            Boka Service
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                        <ModeToggle />
-                    </div>
+                    {/* Right: Actions */}
+                    <div className="flex-1 flex justify-end">
+                        <div className="hidden md:flex items-center gap-6">
+                            <Link
+                                href="#contact"
+                                className="flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-zinc-900 dark:text-white hover:text-[var(--primary)] transition-colors"
+                            >
+                                Boka Service
+                                <ArrowRight className="w-4 h-4" />
+                            </Link>
+                            <ModeToggle />
+                        </div>
 
-                    {/* Mobile CTA Icon */}
-                    <div className="flex items-center gap-4 md:hidden">
-                        <ModeToggle />
-                        <Link href="#contact" className="text-zinc-900 dark:text-white">
-                            <Calendar className="w-5 h-5" />
-                        </Link>
+                        {/* Mobile CTA Icon */}
+                        <div className="flex items-center gap-4 md:hidden">
+                            <ModeToggle />
+                            <Link href="#contact" className="text-zinc-900 dark:text-white">
+                                <Calendar className="w-5 h-5" />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -101,7 +108,7 @@ export function Navbar() {
 
                 <div className="flex-1 flex flex-col justify-center items-center text-center gap-8">
                     {[
-                        { href: "#", label: "Hem" },
+                        { href: "/", label: "Hem" },
                         { href: "#services", label: "Tjänster" },
                         { href: "#process", label: "Process" },
                         { href: "#contact", label: "Boka Tid" },
@@ -141,10 +148,10 @@ export function Navbar() {
                             Kontakt
                         </span>
                         <a
-                            href="tel:021123939"
+                            href="tel:021141560"
                             className="text-sm text-zinc-900 dark:text-white hover:text-primary transition-colors"
                         >
-                            021-12 39 39
+                            021-14 15 60
                         </a>
                     </div>
                 </div>

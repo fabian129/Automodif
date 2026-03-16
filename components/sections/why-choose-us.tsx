@@ -12,6 +12,9 @@ export function WhyChooseUs() {
                     src="/images/gallery/bento-light.jpg"
                     alt="Background Texture"
                     fill
+                    sizes="100vw"
+                    quality={70}
+                    loading="lazy"
                     className="object-cover"
                 />
             </div>
@@ -26,7 +29,7 @@ export function WhyChooseUs() {
                         <h3 className="text-4xl md:text-6xl font-medium text-white tracking-tighter mb-6">
                             Varför välja Automodif?
                         </h3>
-                        <p className="text-white text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
+                        <p className="text-white text-lg md:text-xl font-normal max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
                             Vi kombinerar teknisk expertis med personlig service för att ge dig och din bil den bästa upplevelsen.
                         </p>
                     </div>
@@ -46,7 +49,7 @@ export function WhyChooseUs() {
                             <h4 className="text-2xl font-medium text-zinc-950 dark:text-white mb-4 relative z-10">
                                 Autoexperten Garanti
                             </h4>
-                            <p className="text-base text-zinc-600 dark:text-zinc-400 font-light leading-relaxed mb-6 relative z-10">
+                            <p className="text-base text-zinc-600 dark:text-zinc-400 font-normal leading-relaxed mb-6 relative z-10">
                                 Trygghet på vägen. Vi erbjuder 12 månaders <span className="text-zinc-900 dark:text-zinc-200 font-normal">fri vägassistans</span> och 3 års funktionsgaranti på reservdelar.
                             </p>
 
@@ -74,7 +77,7 @@ export function WhyChooseUs() {
                             <h4 className="text-2xl font-medium text-zinc-950 dark:text-white mb-4 relative z-10">
                                 Certifierade Tekniker
                             </h4>
-                            <p className="text-base text-zinc-600 dark:text-zinc-400 font-light leading-relaxed mb-6 relative z-10">
+                            <p className="text-base text-zinc-600 dark:text-zinc-400 font-normal leading-relaxed mb-6 relative z-10">
                                 Kompetens du kan lita på. Våra mekaniker utbildas löpande för att hantera <span className="text-zinc-900 dark:text-zinc-200 font-normal">modern fordonsteknik</span>.
                             </p>
 
@@ -102,7 +105,7 @@ export function WhyChooseUs() {
                             <h4 className="text-2xl font-medium text-zinc-950 dark:text-white mb-4 relative z-10">
                                 Transparent Prissättning
                             </h4>
-                            <p className="text-base text-zinc-600 dark:text-zinc-400 font-light leading-relaxed mb-6 relative z-10">
+                            <p className="text-base text-zinc-600 dark:text-zinc-400 font-normal leading-relaxed mb-6 relative z-10">
                                 Inga överraskningar. Du får alltid en <span className="text-zinc-900 dark:text-zinc-200 font-normal">tydlig offert</span> och godkänner priset innan vi påbörjar arbetet.
                             </p>
 
