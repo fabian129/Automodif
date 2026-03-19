@@ -87,13 +87,15 @@ export function Hero() {
 
                 <Reveal delay={0.3}>
                     <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                        <Link
-                            href="#contact"
+                        <a
+                            href="https://www.autoexperten.se/hitta-butik-eller-verkstad/automodif/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="w-full md:w-auto px-8 py-3 bg-[var(--primary)] text-white text-sm font-semibold rounded hover:bg-[var(--primary)]/90 transition-all shadow-[0_4px_14px_0_rgba(0,82,204,0.39)] hover:shadow-[0_6px_20px_rgba(0,82,204,0.23)] flex items-center justify-center gap-2"
                         >
                             Boka Service
                             <Calendar className="w-4 h-4" />
-                        </Link>
+                        </a>
 
                         <a
                             href="tel:021141560"

@@ -7,10 +7,10 @@ import { Reveal } from "@/components/ui/reveal";
 const ctaItems = [
     {
         title: "Boka Service Nu",
-        href: "#contact",
+        href: "https://www.autoexperten.se/hitta-butik-eller-verkstad/automodif/",
         description: "Lediga tider finns tillgängliga",
         icon: Calendar,
-        external: false,
+        external: true,
     },
     {
         title: "Få Gratis Offert",

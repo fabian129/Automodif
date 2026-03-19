@@ -42,3 +42,7 @@ next-env.d.ts
 
 # Raw assets
 Hero-videos/
+
+# Large unused video files
+public/videos/0_Car_Repair_3840x2160.mp4
+public/videos/hero-video.mp4

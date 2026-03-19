@@ -164,7 +164,7 @@ export function Process() {
                             </p>
 
                             <div className="flex flex-col md:flex-row gap-4">
-                                <a href="#contact" className="px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-bold rounded-xl hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all hover:scale-105 inline-flex items-center gap-2 shadow-lg dark:shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                                <a href="https://www.autoexperten.se/hitta-butik-eller-verkstad/automodif/" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-bold rounded-xl hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all hover:scale-105 inline-flex items-center gap-2 shadow-lg dark:shadow-[0_0_20px_rgba(255,255,255,0.1)]">
                                     Boka Service Nu
                                     <Calendar className="w-4 h-4" />
                                 </a>

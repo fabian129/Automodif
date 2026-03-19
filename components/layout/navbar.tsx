@@ -56,22 +56,24 @@ export function Navbar() {
                     {/* Right: Actions */}
                     <div className="flex-1 flex justify-end">
                         <div className="hidden md:flex items-center gap-6">
-                            <Link
-                                href="#contact"
+                            <a
+                                href="https://www.autoexperten.se/hitta-butik-eller-verkstad/automodif/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-zinc-900 dark:text-white hover:text-[var(--primary)] transition-colors"
                             >
                                 Boka Service
                                 <ArrowRight className="w-4 h-4" />
-                            </Link>
+                            </a>
                             <ModeToggle />
                         </div>
 
                         {/* Mobile CTA Icon */}
                         <div className="flex items-center gap-4 md:hidden">
                             <ModeToggle />
-                            <Link href="#contact" className="text-zinc-900 dark:text-white">
+                            <a href="https://www.autoexperten.se/hitta-butik-eller-verkstad/automodif/" target="_blank" rel="noopener noreferrer" className="text-zinc-900 dark:text-white">
                                 <Calendar className="w-5 h-5" />
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -111,7 +113,7 @@ export function Navbar() {
                         { href: "/", label: "Hem" },
                         { href: "#services", label: "Tjänster" },
                         { href: "#process", label: "Process" },
-                        { href: "#contact", label: "Boka Tid" },
+                        { href: "https://www.autoexperten.se/hitta-butik-eller-verkstad/automodif/", label: "Boka Tid" },
                     ].map((item, i) => (
                         <div
                             key={item.href}
